@@ -2,8 +2,8 @@ package assignment4;
 /* CRITTERS Main.java
  * EE422C Project 4 submission by
  * Replace <...> with your actual data.
- * <Student1 Name>
- * <Student1 EID>
+ * Jamison Holt
+ * Jah7327
  * <Student1 5-digit Unique No.>
  * <Student2 Name>
  * <Student2 EID>
@@ -38,14 +38,14 @@ public class Main {
 
     /**
      * Main method.
-     * @param args args can be empty.  If not empty, provide two parameters -- the first is a file name, 
+     * @param args args can be empty.  If not empty, provide two parameters -- the first is a file name,
      * and the second is test (for test output, where all output to be directed to a String), or nothing.
      */
-    public static void main(String[] args) { 
+    public static void main(String[] args) {
         if (args.length != 0) {
             try {
                 inputFile = args[0];
-                kb = new Scanner(new File(inputFile));			
+                kb = new Scanner(new File(inputFile));
             } catch (FileNotFoundException e) {
                 System.out.println("USAGE: java Main OR java Main <input file> <test output>");
                 e.printStackTrace();
@@ -68,9 +68,14 @@ public class Main {
         }
 
         /* Write your code below. */
-        
-         System.out.println("GLHF");
-        
+         System.out.println("GLHF"); // TODO: Remove this print statement
+         boolean exit = false;
+         while (!exit) {
+             //TODO: Add user prompt for text commands
+             System.out.println("Prompt user");
+             exit = true;
+         }
+
         /* Write your code above */
         System.out.flush();
 
