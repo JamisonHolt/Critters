@@ -67,10 +67,9 @@ public class Main {
             kb = new Scanner(System.in); // use keyboard and console
         }
 
-        /* Do not alter the code above for your submission. */
         /* Write your code below. */
         
-        // System.out.println("GLHF");
+         System.out.println("GLHF");
         
         /* Write your code above */
         System.out.flush();
