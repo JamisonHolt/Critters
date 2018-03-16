@@ -72,7 +72,7 @@ public class Main {
          boolean exit = false;
          while (!exit) {
              //TODO: Add user prompt for text commands
-             System.out.println("Prompt user");
+             System.out.println("Prompt user: " + kb.next());
              exit = true;
          }
 
