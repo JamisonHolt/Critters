@@ -4,7 +4,7 @@ package assignment4;
  * Replace <...> with your actual data.
  * Jamison Holt
  * Jah7327
- * <Student1 5-digit Unique No.>
+ * 15455
  * <Student2 Name>
  * <Student2 EID>
  * <Student2 5-digit Unique No.>
@@ -72,11 +72,15 @@ public class Main {
          boolean exit = false;
          while (!exit) {
              //TODO: Add user prompt for text commands
-             System.out.println("Prompt user: " + kb.next());
+//             System.out.println("Prompt user: " + kb.next());
              exit = true;
          }
-
         /* Write your code above */
+        /* Remove Code below */
+        for (int i=0; i<100; i++) {
+
+        }
+        /* Remove Code above */
         System.out.flush();
 
     }

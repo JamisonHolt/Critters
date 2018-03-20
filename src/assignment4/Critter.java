@@ -13,6 +13,7 @@ package assignment4;
  */
 
 
+import java.util.HashSet;
 import java.util.List;
 
 /* see the PDF for descriptions of the methods and fields in this class
@@ -25,38 +26,66 @@ public abstract class Critter {
 	private static String myPackage;
 	private	static List<Critter> population = new java.util.ArrayList<Critter>();
 	private static List<Critter> babies = new java.util.ArrayList<Critter>();
+	private static java.util.Random rand = new java.util.Random();
+
+	private int energy = 0;
+	private int x_coord;
+	private int y_coord;
 
 	// Gets the package name.  This assumes that Critter and its subclasses are all in the same package.
 	static {
 		myPackage = Critter.class.getPackage().toString().split(" ")[1];
 	}
-	
-	private static java.util.Random rand = new java.util.Random();
+
+	/**
+	 *
+	 * @param max
+	 * @return
+	 */
 	public static int getRandomInt(int max) {
 		return rand.nextInt(max);
 	}
-	
+
+	/**
+	 *
+	 * @param new_seed
+	 */
 	public static void setSeed(long new_seed) {
 		rand = new java.util.Random(new_seed);
 	}
-	
-	
-	/* a one-character long string that visually depicts your critter in the ASCII interface */
-	public String toString() { return ""; }
-	
-	private int energy = 0;
-	protected int getEnergy() { return energy; }
-	
-	private int x_coord;
-	private int y_coord;
-	
+
+	/**
+	 *
+	 * @return
+	 */
+	public String toString() {return "";}
+
+	/**
+	 *
+	 * @return
+	 */
+	protected int getEnergy() {return energy;}
+
+	/**
+	 *
+	 * @param direction
+	 */
 	protected final void walk(int direction) {
 	}
-	
+
+	/**
+	 *
+	 * @param direction
+	 */
 	protected final void run(int direction) {
 		
 	}
-	
+
+	/**
+	 *
+	 * @param offspring
+	 * @param direction
+	 */
 	protected final void reproduce(Critter offspring, int direction) {
 	}
 
@@ -74,6 +103,25 @@ public abstract class Critter {
 	 * @throws InvalidCritterException
 	 */
 	public static void makeCritter(String critter_class_name) throws InvalidCritterException {
+		// Create new Critter based on class name provided - throw error if invalid
+		if (critter_class_name.equals("Algae")) {
+			population.add(new Algae());
+		} else if (critter_class_name.equals("Craig")) {
+			population.add(new Craig());
+		} else if (critter_class_name.equals("Jamison")) {
+			// TODO: Add Jamison class
+//			population.add(new Jamison());
+		} else if (critter_class_name.equals("Holt")) {
+			// TODO: Add Holt class
+//			population.add(new Jamison());
+		} else {
+			throw new assignment4.InvalidCritterException("Invalid Critter class name!");
+		}
+
+		// Move Critter to random position in the world
+		Critter added = population.get(population.size() - 1);
+		added.y_coord = getRandomInt(Params.world_height);
+		added.x_coord = getRandomInt(Params.world_width);
 	}
 	
 	/**
