@@ -13,8 +13,10 @@ package assignment4;
  */
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
 
 /* see the PDF for descriptions of the methods and fields in this class
  * you may add fields, methods or inner classes to Critter ONLY if you make your additions private
@@ -24,9 +26,9 @@ import java.util.List;
 
 public abstract class Critter {
 	private static String myPackage;
-	private	static List<Critter> population = new java.util.ArrayList<Critter>();
-	private static List<Critter> babies = new java.util.ArrayList<Critter>();
-	private static java.util.Random rand = new java.util.Random();
+	private	static HashSet<Critter> population = new HashSet<Critter>();
+	private static List<Critter> babies = new ArrayList<Critter>();
+	private static java.util.Random rand = new Random();
 
 	private int energy = 0;
 	private int x_coord;
@@ -104,22 +106,21 @@ public abstract class Critter {
 	 */
 	public static void makeCritter(String critter_class_name) throws InvalidCritterException {
 		// Create new Critter based on class name provided - throw error if invalid
+		Critter added;
 		if (critter_class_name.equals("Algae")) {
-			population.add(new Algae());
+			added = new Algae();
 		} else if (critter_class_name.equals("Craig")) {
-			population.add(new Craig());
+			added = new Craig();
+			added.energy = Params.start_energy;
 		} else if (critter_class_name.equals("Jamison")) {
-			// TODO: Add Jamison class
-//			population.add(new Jamison());
+			added = new Jamison();
 		} else if (critter_class_name.equals("Holt")) {
-			// TODO: Add Holt class
-//			population.add(new Jamison());
+			added = new Holt();
 		} else {
 			throw new assignment4.InvalidCritterException("Invalid Critter class name!");
 		}
-
 		// Move Critter to random position in the world
-		Critter added = population.get(population.size() - 1);
+		population.add(added);
 		added.y_coord = getRandomInt(Params.world_height);
 		added.x_coord = getRandomInt(Params.world_width);
 	}
@@ -132,7 +133,16 @@ public abstract class Critter {
 	 */
 	public static List<Critter> getInstances(String critter_class_name) throws InvalidCritterException {
 		List<Critter> result = new java.util.ArrayList<Critter>();
-	
+		String critString = "";
+		if (critter_class_name.equals("Craig")) {critString = "C";}
+		else if (critter_class_name.equals("Algae")) {critString = "@:";}
+		else if (critter_class_name.equals("Jamison")) {critString = "J";}
+		else if (critter_class_name.equals("Holt")) {critString = "H";}
+		for (Critter crit : population) {
+			if (crit.toString().equals(critString)) {
+				result.add(crit);
+			}
+		}
 		return result;
 	}
 	
@@ -198,7 +208,7 @@ public abstract class Critter {
 		 * implemented for grading tests to work.
 		 */
 		protected static List<Critter> getPopulation() {
-			return population;
+			return (List) new ArrayList<Critter>(population);
 		}
 		
 		/*
@@ -218,12 +228,67 @@ public abstract class Critter {
 	public static void clearWorld() {
 		// Complete this method.
 	}
-	
+
+	private static Critter resolve(Critter contender, Critter defender) {
+		// TODO: Add resolution logic here
+		Critter winner = contender;
+		return winner;
+	}
+
 	public static void worldTimeStep() {
-		// Complete this method.
+		// Run a time step for each critter
+		for (Critter crit : Critter.population) {
+			crit.doTimeStep();
+		}
+
+		// Resolve conflicts
+		Critter[][] grid = new Critter[Params.world_height][Params.world_width];
+		for (Critter crit : population) {
+			int col = crit.x_coord;
+			int row = crit.y_coord;
+			if (grid[row][col] != null) {
+				grid[row][col] = resolve(crit, grid[row][col]);
+			} else {
+				grid[row][col] = crit;
+			}
+		}
+
+		// Add babies and then remove dead critters
+		for (Critter baby : babies) {
+			population.add(baby);
+		}
+		List<Critter> morgue = new ArrayList<Critter>();
+		for (Critter crit : population) {
+			if (crit.energy <= 0) {
+				morgue.add(crit);
+			}
+		}
+		for (Critter dead : morgue) {
+			population.remove(dead);
+		}
 	}
 	
 	public static void displayWorld() {
-		// Complete this method.
+		// Create array to store Critters
+		Critter[][] grid = new Critter[Params.world_height][Params.world_width];
+		for (Critter crit : population) {
+			grid[crit.y_coord][crit.x_coord] = crit;
+		}
+		for (int row=-1; row<=Params.world_height; row++) {
+			for (int col=-1; col<=Params.world_width; col++) {
+				if ((row==-1 || row==Params.world_height) && (col==-1 || col==Params.world_width)) {
+					System.out.print("+");
+				} else if (row==-1 || row==Params.world_height) {
+					System.out.print("-");
+				} else if (col==-1 || col==Params.world_width) {
+					System.out.print("|");
+				} else if (grid[row][col] != null) {
+					System.out.print(grid[row][col].toString());
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
 	}
 }
