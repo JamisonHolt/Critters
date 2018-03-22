@@ -52,8 +52,8 @@ public abstract class Critter {
         rowChange = dirMap.get("Down").contains(direction) ? -1 : rowChange;
         colChange = dirMap.get("Right").contains(direction) ? 1 : colChange;
         colChange = dirMap.get("Left").contains(direction) ? -1 : colChange;
-        int new_y_coord = rowChange * numSteps;
-        int new_x_coord = colChange * numSteps;
+        int new_y_coord = this.y_coord + rowChange * numSteps;
+        int new_x_coord = this.x_coord + colChange * numSteps;
 
         // Make sure new position is valid through bounds checking
         if (new_x_coord < 0) {
