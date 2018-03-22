@@ -81,14 +81,15 @@ public abstract class Critter {
         int[] new_coords = look(numSteps, direction);
         if (this.fighting) {
             for (Critter crit : Critter.population) {
-                if (crit.y_coord == new_coords[0] && crit.x_coord == new_coords[1]) {
+                if (crit.y_coord == new_coords[0] && crit.x_coord == new_coords[1] && crit.energy > 0) {
                     return;
                 }
             }
+            // If fighting and change of coordinates, update our conflict-tracking grid
+            conflictGrid[new_coords[0]][new_coords[1]] = this;
         }
         this.y_coord = new_coords[0];
         this.x_coord = new_coords[1];
-        conflictGrid[this.y_coord][this.x_coord] = this;
 	}
 
 	protected final void walk(int direction) {

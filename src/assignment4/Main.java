@@ -116,6 +116,7 @@ public class Main {
                 System.out.println("invalid command: " + cmd);
             }
         } catch (Exception e) {
+//            e.printStackTrace();
             System.out.println("error processing: " + ogCmd);
         }
     }
