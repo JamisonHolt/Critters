@@ -298,14 +298,14 @@ public abstract class Critter {
 
 	public static void worldTimeStep() {
 	    // TODO: Make sure critters don't move twice within same timestep
-		// Run a time step for each critter, making sure to reset situational properties
+		// 2) Run a time step for each critter, making sure to reset situational properties
 		for (Critter crit : Critter.population) {
 		    crit.moved = false;
 		    crit.fighting = false;
 			crit.doTimeStep();
 		}
 
-		// Resolve conflicts between critters in same grid positions
+		// 3) Resolve conflicts between critters in same grid positions
         conflictGrid = new Critter[Params.world_height][Params.world_width];
 		for (Critter crit : population) {
 			int col = crit.x_coord;
@@ -317,7 +317,12 @@ public abstract class Critter {
 			}
 		}
 
-		// Add new Algae to the world
+		// 4) Update Rest Energy
+		for (Critter crit : population) {
+            crit.energy -= assignment4.Params.rest_energy_cost;
+        }
+
+		// 5) Add new Algae to the world
         for (int i=0; i< assignment4.Params.refresh_algae_count; i++) {
             try {
                 makeCritter("Algae");
@@ -326,13 +331,11 @@ public abstract class Critter {
             }
         }
 
-		// Add babies and then remove dead critters
-		for (Critter baby : babies) {
-			population.add(baby);
-		}
+		// 6) Add babies and then remove dead critters
+		population.addAll(babies);
+		babies.clear();
 		List<Critter> morgue = new ArrayList<Critter>();
 		for (Critter crit : population) {
-		    crit.energy -= assignment4.Params.rest_energy_cost;
 			if (crit.energy <= 0) {
 				morgue.add(crit);
 			}
@@ -340,6 +343,7 @@ public abstract class Critter {
 		for (Critter dead : morgue) {
 			population.remove(dead);
 		}
+		morgue.clear();
 	}
 	
 	public static void displayWorld() {
