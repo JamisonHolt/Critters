@@ -75,35 +75,45 @@ public class Main {
         System.out.print("critters> ");
         String cmd = kb.nextLine().trim();
         cmd = cmd.replaceAll("\\s{2,}", " ");
-        // Check all commands if single word or multi-word
-        if (cmd.equals("quit")) {
-            exit = true;
-        } else if (cmd.equals("show")) {
-            Critter.displayWorld();
-        } else {
-            // Make array of words in command and number of words
-            String[] cmdWords = cmd.split("\\s");
-            int numWords = cmdWords.length;
 
-            // Manage multi-word commands
-            if (cmdWords[0].equals("step") && numWords <= 2) {
-                int numSteps = numWords == 1 ? 1 : Integer.parseInt(cmdWords[1]);
-                for (int i=0; i<numSteps; i++) {
-                    Critter.worldTimeStep();
+        // Handle Exceptions/Errors
+        try {
+
+            // Check all commands if single word or multi-word
+            if (cmd.equals("quit")) {
+                exit = true;
+            } else if (cmd.equals("show")) {
+                Critter.displayWorld();
+            } else {
+                // Make array of words in command and number of words
+                String[] cmdWords = cmd.split("\\s");
+                int numWords = cmdWords.length;
+
+                // Manage multi-word commands
+                if (cmdWords[0].equals("step") && numWords <= 2) {
+                    int numSteps = numWords == 1 ? 1 : Integer.parseInt(cmdWords[1]);
+                    for (int i=0; i<numSteps; i++) {
+                        Critter.worldTimeStep();
+                    }
+                } else if (cmdWords[0].equals("seed") && numWords == 2) {
+                    long seedNum = (Long.parseLong(cmdWords[1]));
+                    System.out.println(seedNum);
+                    Critter.setSeed(seedNum);
+                } else if (cmdWords[0].equals("make") && (numWords == 2 || numWords == 3)) {
+                    int toMake = numWords == 2 ? 1 : Integer.parseInt(cmdWords[2]);
+                    for (int i=0; i<toMake; i++) {
+                        Critter.makeCritter(cmdWords[1]);
+                    }
+                } else if (cmdWords[0].equals("stats") && numWords == 2) {
+                    List<Critter> instances = Critter.getInstances(cmdWords[1]);
+                    Critter.runStats(instances);
+                } else {
+                    // Command not found - print as such
+                    System.out.println("invalid command: " + cmd);
                 }
-            } else if (cmdWords[0].equals("seed") && numWords == 2) {
-                long seedNum = (Long.parseLong(cmdWords[1]));
-                System.out.println(seedNum);
-                Critter.setSeed(seedNum);
-            } else if (cmdWords[0].equals("make") && (numWords == 2 || numWords == 3)) {
-                int toMake = numWords == 2 ? 1 : Integer.parseInt(cmdWords[2]);
-                for (int i=0; i<toMake; i++) {
-                    Critter.makeCritter(cmdWords[1]);
-                }
-            } else if (cmdWords[0].equals("stats") && numWords == 2) {
-                List<Critter> instances = Critter.getInstances(cmdWords[1]);
-                Critter.runStats(instances);
             }
+        } catch (Exception e) {
+            System.out.println("error processing: " + cmd);
         }
     }
     /* Write your code above */
