@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a04217a-aab4-4c51-8d9b-ccffd9888825" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/assignment4/Critter.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Main.java" afterPath="$PROJECT_DIR$/src/assignment4/Main.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,8 +31,8 @@
       <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="116" column="32" lean-forward="true" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
+            <state relative-caret-position="402">
+              <caret line="263" column="63" lean-forward="false" selection-start-line="263" selection-start-column="63" selection-end-line="263" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#789#798#0" expanded="true" />
@@ -43,11 +41,11 @@
                 <element signature="e#1288#1289#0" expanded="true" />
                 <element signature="e#1368#1369#0" expanded="true" />
                 <element signature="e#1412#1413#0" expanded="true" />
-                <element signature="e#3569#3578#0" expanded="true" />
-                <element signature="e#4320#4337#0" expanded="true" />
-                <element signature="e#6140#6141#0" expanded="true" />
-                <element signature="e#6197#6198#0" expanded="true" />
-                <element signature="e#7512#7521#0" expanded="true" />
+                <element signature="e#3629#3638#0" expanded="true" />
+                <element signature="e#4380#4397#0" expanded="true" />
+                <element signature="e#6200#6201#0" expanded="true" />
+                <element signature="e#6257#6258#0" expanded="true" />
+                <element signature="e#7672#7681#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,8 +54,8 @@
       <file leaf-file-name="Craig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+            <state relative-caret-position="161">
+              <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -84,6 +82,8 @@
       <find>stats</find>
       <find>runstats</find>
       <find>getinstan</find>
+      <find>fight</find>
+      <find>reproduce</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -318,7 +318,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="24" width="960" height="1011" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -328,7 +327,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3392265" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3392265" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3392265" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -416,11 +415,11 @@
             <element signature="e#1288#1289#0" expanded="true" />
             <element signature="e#1368#1369#0" expanded="true" />
             <element signature="e#1412#1413#0" expanded="true" />
-            <element signature="e#3569#3578#0" expanded="true" />
-            <element signature="e#4320#4337#0" expanded="true" />
-            <element signature="e#6140#6141#0" expanded="true" />
-            <element signature="e#6197#6198#0" expanded="true" />
-            <element signature="e#7512#7521#0" expanded="true" />
+            <element signature="e#3629#3638#0" expanded="true" />
+            <element signature="e#4380#4397#0" expanded="true" />
+            <element signature="e#6200#6201#0" expanded="true" />
+            <element signature="e#6257#6258#0" expanded="true" />
+            <element signature="e#7672#7681#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -463,11 +462,11 @@
             <element signature="e#1288#1289#0" expanded="true" />
             <element signature="e#1368#1369#0" expanded="true" />
             <element signature="e#1412#1413#0" expanded="true" />
-            <element signature="e#3569#3578#0" expanded="true" />
-            <element signature="e#4320#4337#0" expanded="true" />
-            <element signature="e#6140#6141#0" expanded="true" />
-            <element signature="e#6197#6198#0" expanded="true" />
-            <element signature="e#7512#7521#0" expanded="true" />
+            <element signature="e#3629#3638#0" expanded="true" />
+            <element signature="e#4380#4397#0" expanded="true" />
+            <element signature="e#6200#6201#0" expanded="true" />
+            <element signature="e#6257#6258#0" expanded="true" />
+            <element signature="e#7672#7681#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -693,8 +692,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        <state relative-caret-position="161">
+          <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -711,8 +710,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="116" column="32" lean-forward="true" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
+        <state relative-caret-position="402">
+          <caret line="263" column="63" lean-forward="false" selection-start-line="263" selection-start-column="63" selection-end-line="263" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#789#798#0" expanded="true" />
@@ -721,11 +720,11 @@
             <element signature="e#1288#1289#0" expanded="true" />
             <element signature="e#1368#1369#0" expanded="true" />
             <element signature="e#1412#1413#0" expanded="true" />
-            <element signature="e#3569#3578#0" expanded="true" />
-            <element signature="e#4320#4337#0" expanded="true" />
-            <element signature="e#6140#6141#0" expanded="true" />
-            <element signature="e#6197#6198#0" expanded="true" />
-            <element signature="e#7512#7521#0" expanded="true" />
+            <element signature="e#3629#3638#0" expanded="true" />
+            <element signature="e#4380#4397#0" expanded="true" />
+            <element signature="e#6200#6201#0" expanded="true" />
+            <element signature="e#6257#6258#0" expanded="true" />
+            <element signature="e#7672#7681#0" expanded="true" />
           </folding>
         </state>
       </provider>

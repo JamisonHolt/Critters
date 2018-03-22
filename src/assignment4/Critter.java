@@ -89,6 +89,8 @@ public abstract class Critter {
 	 * @param direction
 	 */
 	protected final void reproduce(Critter offspring, int direction) {
+	    babies.add(offspring);
+	    offspring.walk(direction);
 	}
 
 	public abstract void doTimeStep();
@@ -240,7 +242,7 @@ public abstract class Critter {
 			crit.doTimeStep();
 		}
 
-		// Resolve conflicts
+		// Resolve conflicts between critters in same grid positions
 		Critter[][] grid = new Critter[Params.world_height][Params.world_width];
 		for (Critter crit : population) {
 			int col = crit.x_coord;
@@ -252,12 +254,14 @@ public abstract class Critter {
 			}
 		}
 
+		// TODO: make sure reproduce method is correctly finished
 		// Add babies and then remove dead critters
 		for (Critter baby : babies) {
 			population.add(baby);
 		}
 		List<Critter> morgue = new ArrayList<Critter>();
 		for (Critter crit : population) {
+		    crit.energy -= assignment4.Params.rest_energy_cost;
 			if (crit.energy <= 0) {
 				morgue.add(crit);
 			}
