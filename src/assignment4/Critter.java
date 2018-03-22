@@ -104,22 +104,21 @@ public abstract class Critter {
 	 * @param critter_class_name
 	 * @throws InvalidCritterException
 	 */
-	public static void makeCritter(String critter_class_name) throws InvalidCritterException {
+	public static void makeCritter(String critter_class_name) throws Exception {
 		// Create new Critter based on class name provided - throw error if invalid
-		Critter added;
-		if (critter_class_name.equals("Algae")) {
-			added = new Algae();
-		} else if (critter_class_name.equals("Craig")) {
-			added = new Craig();
-			added.energy = Params.start_energy;
-		} else if (critter_class_name.equals("Jamison")) {
-			added = new Jamison();
-		} else if (critter_class_name.equals("Holt")) {
-			added = new Holt();
-		} else {
+		Critter added = new assignment4.Algae();
+		try {
+			added = (Critter) Class.forName("assignment4." + critter_class_name).newInstance();
+		} catch (ClassNotFoundException e) {
 			throw new assignment4.InvalidCritterException("Invalid Critter class name!");
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
 		}
+
 		// Move Critter to random position in the world
+        added.energy = assignment4.Params.start_energy;
 		population.add(added);
 		added.y_coord = getRandomInt(Params.world_height);
 		added.x_coord = getRandomInt(Params.world_width);
@@ -135,7 +134,7 @@ public abstract class Critter {
 		List<Critter> result = new java.util.ArrayList<Critter>();
 		String critString = "";
 		if (critter_class_name.equals("Craig")) {critString = "C";}
-		else if (critter_class_name.equals("Algae")) {critString = "@:";}
+		else if (critter_class_name.equals("Algae")) {critString = "@";}
 		else if (critter_class_name.equals("Jamison")) {critString = "J";}
 		else if (critter_class_name.equals("Holt")) {critString = "H";}
 		for (Critter crit : population) {
