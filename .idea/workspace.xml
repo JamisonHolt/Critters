@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a04217a-aab4-4c51-8d9b-ccffd9888825" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter$TestCritter.class" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter$TestCritter.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter.class" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter.class" />
       <change beforePath="$PROJECT_DIR$/src/assignment4/Critter.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +34,8 @@
       <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="114" column="71" lean-forward="false" selection-start-line="114" selection-start-column="71" selection-end-line="114" selection-end-column="71" />
+            <state relative-caret-position="171">
+              <caret line="313" column="17" lean-forward="true" selection-start-line="313" selection-start-column="17" selection-end-line="313" selection-end-column="17" />
               <folding>
                 <element signature="e#412#421#0" expanded="true" />
                 <element signature="e#477#486#0" expanded="true" />
@@ -56,8 +59,18 @@
                 <element signature="e#8549#8550#0" expanded="true" />
                 <element signature="e#8650#8651#0" expanded="true" />
                 <element signature="e#8692#8693#0" expanded="true" />
-                <element signature="e#11054#11063#0" expanded="true" />
+                <element signature="e#11851#11860#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Algae.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,8 +88,8 @@
       <file leaf-file-name="Craig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="21" />
+            <state relative-caret-position="308">
+              <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -107,6 +120,7 @@
       <find>fight</find>
       <find>run</find>
       <find>reproduce</find>
+      <find>@</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -356,7 +370,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -454,7 +468,7 @@
             <element signature="e#8549#8550#0" expanded="true" />
             <element signature="e#8650#8651#0" expanded="true" />
             <element signature="e#8692#8693#0" expanded="true" />
-            <element signature="e#11054#11063#0" expanded="true" />
+            <element signature="e#11851#11860#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -512,7 +526,7 @@
             <element signature="e#8549#8550#0" expanded="true" />
             <element signature="e#8650#8651#0" expanded="true" />
             <element signature="e#8692#8693#0" expanded="true" />
-            <element signature="e#11054#11063#0" expanded="true" />
+            <element signature="e#11851#11860#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -682,14 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_sample/assignment4/A4SampleTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -728,6 +734,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -740,24 +754,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="21" />
+        <state relative-caret-position="308">
+          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        <state relative-caret-position="147">
+          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="114" column="71" lean-forward="false" selection-start-line="114" selection-start-column="71" selection-end-line="114" selection-end-column="71" />
+        <state relative-caret-position="171">
+          <caret line="313" column="17" lean-forward="true" selection-start-line="313" selection-start-column="17" selection-end-line="313" selection-end-column="17" />
           <folding>
             <element signature="e#412#421#0" expanded="true" />
             <element signature="e#477#486#0" expanded="true" />
@@ -781,7 +795,7 @@
             <element signature="e#8549#8550#0" expanded="true" />
             <element signature="e#8650#8651#0" expanded="true" />
             <element signature="e#8692#8693#0" expanded="true" />
-            <element signature="e#11054#11063#0" expanded="true" />
+            <element signature="e#11851#11860#0" expanded="true" />
           </folding>
         </state>
       </provider>

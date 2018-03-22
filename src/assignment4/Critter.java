@@ -245,10 +245,24 @@ public abstract class Critter {
             contender.fighting = true;
             int dir = getRandomInt(7);
             contender.run(dir);
+
+            // Check surrender condition
+            if (defenderFight && defender.y_coord == contender.y_coord && defender.x_coord == contender.x_coord) {
+                defender.energy += contender.energy / 2;
+                contender.energy = 0;
+                return defender;
+            }
         } if (!(defenderFight)) {
             defender.fighting = true;
             int dir = getRandomInt(7);
             defender.run(dir);
+
+            // Check surrender condition
+            if (contenderFight && defender.y_coord == contender.y_coord && defender.x_coord == contender.x_coord) {
+                contender.energy += defender.energy / 2;
+                defender.energy = 0;
+                return contender;
+            }
         }
 
         // Check if critter died trying to run away - if so, fight resolved
@@ -295,7 +309,15 @@ public abstract class Critter {
 			}
 		}
 
-		// TODO: make sure reproduce method is correctly finished
+		// Add new Algae to the world
+        for (int i=0; i< assignment4.Params.refresh_algae_count; i++) {
+            try {
+                makeCritter("Algae");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
 		// Add babies and then remove dead critters
 		for (Critter baby : babies) {
 			population.add(baby);
