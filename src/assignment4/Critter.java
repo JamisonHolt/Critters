@@ -18,7 +18,8 @@ import java.util.*;
 public abstract class Critter {
 	private static String myPackage;
 	private	static HashSet<Critter> population = new HashSet<Critter>();
-	private static List<Critter> babies = new ArrayList<Critter>();
+    private static Critter[][] conflictGrid = new Critter[Params.world_height][Params.world_width];
+    private static List<Critter> babies = new ArrayList<Critter>();
 	private static java.util.Random rand = new Random();
 
 	private int energy = 0;
@@ -87,6 +88,7 @@ public abstract class Critter {
         }
         this.y_coord = new_coords[0];
         this.x_coord = new_coords[1];
+        conflictGrid[this.y_coord][this.x_coord] = this;
 	}
 
 	protected final void walk(int direction) {
@@ -142,9 +144,9 @@ public abstract class Critter {
 
 		// Move Critter to random position in the world
         added.energy = assignment4.Params.start_energy;
-		population.add(added);
 		added.y_coord = getRandomInt(Params.world_height);
 		added.x_coord = getRandomInt(Params.world_width);
+        population.add(added);
 	}
 	
 	/**
@@ -237,33 +239,37 @@ public abstract class Critter {
 	    // Make sure current "residing" critter is alive
         if (defender.energy <= 0) {
             return contender;
+        } else if (contender.energy <= 0) {
+            return defender;
         }
 
-        // Check if each critter wants to fight - run away if not
+        // Check if each critter decides to fight or not
+        int oldX = contender.x_coord;
+        int oldY = contender.y_coord;
         boolean contenderFight = contender.fight(defender.toString());
         boolean defenderFight = defender.fight(contender.toString());
-        if (!(contenderFight)) {
-            contender.fighting = true;
-            int dir = getRandomInt(7);
-            contender.run(dir);
 
-            // Check surrender condition
-            if (defenderFight && defender.y_coord == contender.y_coord && defender.x_coord == contender.x_coord) {
-                defender.energy += contender.energy / 2;
-                contender.energy = 0;
-                return defender;
-            }
-        } if (!(defenderFight)) {
-            defender.fighting = true;
-            int dir = getRandomInt(7);
-            defender.run(dir);
+        // Check if Critter's no longer fighting
+        boolean sameY = contender.y_coord == defender.y_coord;
+        boolean sameX = contender.x_coord == defender.x_coord;
 
-            // Check surrender condition
-            if (contenderFight && defender.y_coord == contender.y_coord && defender.x_coord == contender.x_coord) {
-                contender.energy += defender.energy / 2;
-                defender.energy = 0;
+        // If one creature moved, add correct critter to this grid spot. Else, add nothing
+        if (!(sameY && sameX)) {
+            if (contender.x_coord == oldX && contender.y_coord == oldY) {
                 return contender;
+            } else if (defender.x_coord == oldX && defender.y_coord == oldY) {
+                return defender;
+            } else {
+                return null;
             }
+        }
+
+        // Check surrender condition
+        if ((contenderFight != defenderFight) && sameY && sameX) {
+            Critter winner = contenderFight ? contender : defender;
+            Critter loser = contenderFight ? defender : contender;
+            winner.energy += loser.energy / 2;
+            return winner;
         }
 
         // Check if critter died trying to run away - if so, fight resolved
@@ -299,14 +305,14 @@ public abstract class Critter {
 		}
 
 		// Resolve conflicts between critters in same grid positions
-		Critter[][] grid = new Critter[Params.world_height][Params.world_width];
+        conflictGrid = new Critter[Params.world_height][Params.world_width];
 		for (Critter crit : population) {
 			int col = crit.x_coord;
 			int row = crit.y_coord;
-			if (grid[row][col] != null) {
-				grid[row][col] = resolve(crit, grid[row][col]);
+			if (conflictGrid[row][col] != null) {
+			    conflictGrid[row][col] = resolve(crit, conflictGrid[row][col]);
 			} else {
-				grid[row][col] = crit;
+			    conflictGrid[row][col] = crit;
 			}
 		}
 
@@ -337,9 +343,9 @@ public abstract class Critter {
 	
 	public static void displayWorld() {
 		// Create array to store Critters
-		Critter[][] grid = new Critter[Params.world_height][Params.world_width];
+		Critter[][] outputGrid = new Critter[Params.world_height][Params.world_width];
 		for (Critter crit : population) {
-			grid[crit.y_coord][crit.x_coord] = crit;
+			outputGrid[crit.y_coord][crit.x_coord] = crit;
 		}
 		for (int row=-1; row<=Params.world_height; row++) {
 			for (int col=-1; col<=Params.world_width; col++) {
@@ -349,8 +355,8 @@ public abstract class Critter {
 					System.out.print("-");
 				} else if (col==-1 || col==Params.world_width) {
 					System.out.print("|");
-				} else if (grid[row][col] != null) {
-					System.out.print(grid[row][col].toString());
+				} else if (outputGrid[row][col] != null) {
+					System.out.print(outputGrid[row][col].toString());
 				} else {
 					System.out.print(" ");
 				}
