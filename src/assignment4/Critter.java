@@ -13,10 +13,7 @@ package assignment4;
  */
 
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /* see the PDF for descriptions of the methods and fields in this class
  * you may add fields, methods or inner classes to Critter ONLY if you make your additions private
@@ -33,6 +30,7 @@ public abstract class Critter {
 	private int energy = 0;
 	private int x_coord;
 	private int y_coord;
+	private boolean moved = false;
 
 	// Gets the package name.  This assumes that Critter and its subclasses are all in the same package.
 	static {
@@ -72,7 +70,54 @@ public abstract class Critter {
 	 *
 	 * @param direction
 	 */
+
+    /**
+     *
+     * @param numSteps
+     * @param energyCost
+     * @param direction
+     */
+	protected final void move(int numSteps, int energyCost, int direction) {
+        // TODO: Figure out what it means by "look functions added later"
+        // Check if Critter has moved previously and update energy if so
+        this.energy -= energyCost;
+        if (this.moved) {
+            return;
+        }
+        this.moved = true;
+
+        // Create a map for making sure directions get updated correctly
+        HashMap<String, List<Integer>> dirMap= new HashMap<>();
+        dirMap.put("Up", Arrays.asList(1, 2, 3));
+        dirMap.put("Down", Arrays.asList(5, 6, 7));
+        dirMap.put("Right", Arrays.asList(0, 1, 7));
+        dirMap.put("Left", Arrays.asList(3, 4, 5));
+
+        // Decide how the critter will move based on the direction map
+        int colChange = 0;
+        int rowChange = 0;
+        rowChange = dirMap.get("Up").contains(direction) ? 1 : rowChange;
+        rowChange = dirMap.get("Down").contains(direction) ? -1 : rowChange;
+        colChange = dirMap.get("Right").contains(direction) ? 1 : colChange;
+        colChange = dirMap.get("Left").contains(direction) ? -1 : colChange;
+
+        // Update the critter's row and column, making sure to check if too low/high
+        this.x_coord += colChange * numSteps;
+        this.y_coord += rowChange * numSteps;
+        if (this.x_coord < 0) {
+            this.x_coord = assignment4.Params.world_width + this.x_coord;
+        } else if (this.x_coord >= assignment4.Params.world_width) {
+            this.x_coord = this.x_coord - assignment4.Params.world_width;
+        }
+        if (this.y_coord < 0) {
+            this.y_coord = assignment4.Params.world_height + this.y_coord;
+        } else if (this.y_coord >= assignment4.Params.world_height) {
+            this.y_coord = this.y_coord - assignment4.Params.world_height;
+        }
+    }
+
 	protected final void walk(int direction) {
+	    move(1, assignment4.Params.walk_energy_cost, direction);
 	}
 
 	/**
@@ -80,7 +125,7 @@ public abstract class Critter {
 	 * @param direction
 	 */
 	protected final void run(int direction) {
-		
+		move(2, assignment4.Params.run_energy_cost, direction);
 	}
 
 	/**
@@ -237,8 +282,10 @@ public abstract class Critter {
 	}
 
 	public static void worldTimeStep() {
-		// Run a time step for each critter
+	    // TODO: Make sure critters don't move twice within same timestep
+		// Run a time step for each critter, making sure to say it hasn't moved
 		for (Critter crit : Critter.population) {
+		    crit.moved = false;
 			crit.doTimeStep();
 		}
 
