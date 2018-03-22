@@ -296,16 +296,48 @@ public abstract class Critter {
 	}
 
 	private static Critter resolve(Critter contender, Critter defender) {
-		// TODO: Add resolution logic here
-		Critter winner = contender;
-		return winner;
+        // Check if each critter wants to fight - run away if not
+        boolean contenderFight = contender.fight(defender.toString());
+        boolean defenderFight = defender.fight(contender.toString());
+        if (!(contenderFight)) {
+            contender.fighting = true;
+            int dir = getRandomInt(7);
+            contender.run(dir);
+        } if (!(defenderFight)) {
+            defender.fighting = true;
+            int dir = getRandomInt(7);
+            defender.run(dir);
+        }
+
+        // Check if critter died trying to run away - if so, fight resolved
+		if (contender.energy <= 0 && defender.energy <= 0) {
+		    return null;
+        } else if (contender.energy <= 0) {
+		    return defender;
+        } else if (defender.energy <= 0) {
+		    return contender;
+        }
+
+        // Roll off between contender and defender to decide winner
+        int contRoll = getRandomInt(contender.energy);
+        int defRoll = getRandomInt(defender.energy);
+        if (contRoll >= defRoll) {
+            contender.energy += defender.energy / 2;
+            population.remove(defender);
+            return contender;
+        } else {
+            defender.energy += contender.energy / 2;
+            population.remove(contender);
+            return defender;
+        }
 	}
 
 	public static void worldTimeStep() {
 	    // TODO: Make sure critters don't move twice within same timestep
-		// Run a time step for each critter, making sure to say it hasn't moved
+		// Run a time step for each critter, making sure to reset situational properties
 		for (Critter crit : Critter.population) {
 		    crit.moved = false;
+		    crit.fighting = false;
 			crit.doTimeStep();
 		}
 
