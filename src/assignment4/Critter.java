@@ -98,8 +98,22 @@ public abstract class Critter {
 	}
 
 	protected final void reproduce(Critter offspring, int direction) {
+	    // Confirm that "parent" critter has enough energy to reproduce
+        if (this.energy <= assignment4.Params.min_reproduce_energy) {return;}
+
+        // Assign child energy to half, rounded down. Parent loses half, round ups
+        offspring.energy = this.energy / 2;
+        this.energy -= offspring.energy;
+
+        // Update child's location using adjacent square to parent
+        offspring.x_coord = this.x_coord;
+        offspring.y_coord = this.y_coord;
+        int[] new_coords = offspring.look(1, direction);
+        offspring.y_coord = new_coords[0];
+        offspring.x_coord = new_coords[1];
+
+        // Add to babies collection, to be added to pop at end of cycle
 	    babies.add(offspring);
-	    offspring.walk(direction);
 	}
 
 
