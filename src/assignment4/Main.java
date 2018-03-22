@@ -42,7 +42,7 @@ public class Main {
     * @param args args can be empty.  If not empty, provide two parameters -- the first is a file name,
     * and the second is test (for test output, where all output to be directed to a String), or nothing.
     */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         if (args.length != 0) {
             try {
                 inputFile = args[0];
@@ -72,8 +72,9 @@ public class Main {
     boolean exit = false;
     while (!exit) {
         // Get and clean next user commmand
-        System.out.print("critters> ");
-        String cmd = kb.nextLine().trim();
+        System.out.print("critters>");
+        String ogCmd = kb.nextLine();
+        String cmd = ogCmd.trim();
         cmd = cmd.replaceAll("\\s{2,}", " ");
 
         // Handle Exceptions/Errors
@@ -88,7 +89,6 @@ public class Main {
                 // Make array of words in command and number of words
                 String[] cmdWords = cmd.split("\\s");
                 int numWords = cmdWords.length;
-
                 // Manage multi-word commands
                 if (cmdWords[0].equals("step") && numWords <= 2) {
                     int numSteps = numWords == 1 ? 1 : Integer.parseInt(cmdWords[1]);
@@ -106,14 +106,15 @@ public class Main {
                     }
                 } else if (cmdWords[0].equals("stats") && numWords == 2) {
                     List<Critter> instances = Critter.getInstances(cmdWords[1]);
-                    Critter.runStats(instances);
+                    Class.forName("assignment4." + cmdWords[1]).getMethod("runStats", List.class).invoke(null, instances);
                 } else {
                     // Command not found - print as such
-                    System.out.println("invalid command: " + cmd);
+                    System.out.println("error processing: " + ogCmd);
+//                    System.out.println("invalid command: " + cmd);
                 }
             }
         } catch (Exception e) {
-            System.out.println("error processing: " + cmd);
+            System.out.println("error processing: " + ogCmd);
         }
     }
     /* Write your code above */

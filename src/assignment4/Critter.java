@@ -127,7 +127,7 @@ public abstract class Critter {
 	 * @param critter_class_name
 	 * @throws Exception
 	 */
-	public static void makeCritter(String critter_class_name) throws Exception {
+	public static void makeCritter(String critter_class_name) throws assignment4.InvalidCritterException {
 		// Create new Critter based on class name provided - throw error if invalid
 		Critter added = new assignment4.Algae();
 		try {
@@ -135,9 +135,9 @@ public abstract class Critter {
 		} catch (ClassNotFoundException e) {
 			throw new assignment4.InvalidCritterException("Invalid Critter class name!");
 		} catch (IllegalAccessException e) {
-			e.printStackTrace();
+            throw new assignment4.InvalidCritterException("Invalid Critter class name!");
 		} catch (InstantiationException e) {
-			e.printStackTrace();
+            throw new assignment4.InvalidCritterException("Invalid Critter class name!");
 		}
 
 		// Move Critter to random position in the world
