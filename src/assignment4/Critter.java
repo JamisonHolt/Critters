@@ -155,15 +155,16 @@ public abstract class Critter {
 	 */
 	public static List<Critter> getInstances(String critter_class_name) throws InvalidCritterException {
 		List<Critter> result = new java.util.ArrayList<Critter>();
-		String critString = "";
-		if (critter_class_name.equals("Craig")) {critString = "C";}
-		else if (critter_class_name.equals("Algae")) {critString = "@";}
-		else if (critter_class_name.equals("Jamison")) {critString = "J";}
-		else if (critter_class_name.equals("Holt")) {critString = "H";}
 		for (Critter crit : population) {
-			if (crit.toString().equals(critString)) {
-				result.add(crit);
-			}
+		    boolean found = false;
+		    try {
+                found = Class.forName(Critter.myPackage + "." + critter_class_name) == crit.getClass();
+            } catch (Exception e) {
+		        e.printStackTrace();
+            }
+		    if (found) {
+		        result.add(crit);
+            }
 		}
 		return result;
 	}

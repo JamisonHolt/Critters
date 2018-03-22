@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a04217a-aab4-4c51-8d9b-ccffd9888825" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Main.class" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Main.class" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Main.java" afterPath="$PROJECT_DIR$/src/assignment4/Main.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter$TestCritter.class" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter$TestCritter.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter.class" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter.class" />
+      <change beforePath="$PROJECT_DIR$/src/assignment4/Critter.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-340">
-              <caret line="91" column="39" lean-forward="true" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
+            <state relative-caret-position="374">
+              <caret line="125" column="1" lean-forward="true" selection-start-line="125" selection-start-column="1" selection-end-line="125" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,32 +41,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArrayList.class" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/ArrayList.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="expected_output.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_sample/error_processing/expected_output.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="36" lean-forward="true" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Critter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="133" column="32" lean-forward="false" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
-              <folding />
+            <state relative-caret-position="54">
+              <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+              <folding>
+                <element signature="e#8733#8734#0" expanded="true" />
+                <element signature="e#8775#8776#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,8 +89,8 @@
       <file leaf-file-name="A4SampleTest2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_sample/assignment4/A4SampleTest2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="77" column="57" lean-forward="false" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="57" />
+            <state relative-caret-position="248">
+              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -147,12 +132,13 @@
       <find>reproduce</find>
       <find>@</find>
       <find>refresh</find>
-      <find>private</find>
       <find>runstats</find>
       <find>stat</find>
       <find>makecritter</find>
       <find>system.out.print(</find>
       <find>print</find>
+      <find>getinstances</find>
+      <find>private</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,9 +158,9 @@
         <option value="$PROJECT_DIR$/src/assignment4/Craig.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Params.java" />
         <option value="$PROJECT_DIR$/test_sample/assignment4/A4SampleTest.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/Critter.java" />
         <option value="$PROJECT_DIR$/test_sample/error_processing/expected_output.txt" />
         <option value="$PROJECT_DIR$/src/assignment4/Main.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/Critter.java" />
       </list>
     </option>
   </component>
@@ -280,7 +266,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.A4SampleTest">
+  <component name="RunManager" selected="JUnit.A4SampleTest2">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -449,35 +435,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="A4SampleTest - 2018.03.22 at 13h 04m 01s.xml">
-      <configuration name="A4SampleTest" configurationId="JUnit" />
+    <history-entry file="A4SampleTest2 - 2018.03.22 at 13h 21m 19s.xml">
+      <configuration name="A4SampleTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="A4SampleTest - 2018.03.22 at 13h 05m 03s.xml">
-      <configuration name="A4SampleTest" configurationId="JUnit" />
+    <history-entry file="A4SampleTest2 - 2018.03.22 at 13h 25m 07s.xml">
+      <configuration name="A4SampleTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="A4SampleTest - 2018.03.22 at 13h 05m 27s.xml">
-      <configuration name="A4SampleTest" configurationId="JUnit" />
+    <history-entry file="A4SampleTest2 - 2018.03.22 at 14h 45m 26s.xml">
+      <configuration name="A4SampleTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="A4SampleTest - 2018.03.22 at 13h 08m 34s.xml">
-      <configuration name="A4SampleTest" configurationId="JUnit" />
+    <history-entry file="A4SampleTest2 - 2018.03.22 at 14h 47m 40s.xml">
+      <configuration name="A4SampleTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="A4SampleTest - 2018.03.22 at 13h 12m 41s.xml">
-      <configuration name="A4SampleTest" configurationId="JUnit" />
+    <history-entry file="A4SampleTest2 - 2018.03.22 at 14h 47m 58s.xml">
+      <configuration name="A4SampleTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="A4SampleTest - 2018.03.22 at 13h 13m 35s.xml">
-      <configuration name="A4SampleTest" configurationId="JUnit" />
+    <history-entry file="A4SampleTest2 - 2018.03.22 at 14h 48m 08s.xml">
+      <configuration name="A4SampleTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="A4SampleTest - 2018.03.22 at 13h 16m 37s.xml">
-      <configuration name="A4SampleTest" configurationId="JUnit" />
+    <history-entry file="A4SampleTest2 - 2018.03.22 at 14h 48m 25s.xml">
+      <configuration name="A4SampleTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="A4SampleTest - 2018.03.22 at 13h 17m 31s.xml">
-      <configuration name="A4SampleTest" configurationId="JUnit" />
+    <history-entry file="A4SampleTest2 - 2018.03.22 at 14h 48m 40s.xml">
+      <configuration name="A4SampleTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="A4SampleTest - 2018.03.22 at 13h 17m 57s.xml">
-      <configuration name="A4SampleTest" configurationId="JUnit" />
+    <history-entry file="A4SampleTest2 - 2018.03.22 at 14h 51m 13s.xml">
+      <configuration name="A4SampleTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="A4SampleTest - 2018.03.22 at 13h 20m 22s.xml">
-      <configuration name="A4SampleTest" configurationId="JUnit" />
+    <history-entry file="A4SampleTest2 - 2018.03.22 at 14h 52m 00s.xml">
+      <configuration name="A4SampleTest2" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -590,7 +576,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="202" column="22" lean-forward="false" selection-start-line="202" selection-start-column="22" selection-end-line="202" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="e#8733#8734#0" expanded="true" />
+            <element signature="e#8775#8776#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -660,7 +649,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2709">
           <caret line="136" column="42" lean-forward="true" selection-start-line="136" selection-start-column="42" selection-end-line="136" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="e#8733#8734#0" expanded="true" />
+            <element signature="e#8775#8776#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -694,7 +686,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="e#8733#8734#0" expanded="true" />
+            <element signature="e#8775#8776#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -909,14 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_sample/assignment4/A4SampleTest2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="77" column="57" lean-forward="false" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_sample/empty_world/input.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -959,19 +946,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="133" column="32" lean-forward="false" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_sample/error_processing/expected_output.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="36" lean-forward="true" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="125" column="1" lean-forward="true" selection-start-line="125" selection-start-column="1" selection-end-line="125" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -991,12 +980,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
+    <entry file="file://$PROJECT_DIR$/test_sample/assignment4/A4SampleTest2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="91" column="39" lean-forward="true" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
+        <state relative-caret-position="248">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#8733#8734#0" expanded="true" />
+            <element signature="e#8775#8776#0" expanded="true" />
           </folding>
         </state>
       </provider>
