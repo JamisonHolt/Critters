@@ -66,10 +66,43 @@ public abstract class Critter {
 	 */
 	protected int getEnergy() {return energy;}
 
-	/**
-	 *
-	 * @param direction
-	 */
+    /**
+     *
+     * @param numSteps
+     * @param direction
+     * @return
+     */
+	protected final int[] look(int numSteps, int direction) {
+        // Create a map for making sure directions get updated correctly
+        HashMap<String, List<Integer>> dirMap= new HashMap<>();
+        dirMap.put("Up", Arrays.asList(1, 2, 3));
+        dirMap.put("Down", Arrays.asList(5, 6, 7));
+        dirMap.put("Right", Arrays.asList(0, 1, 7));
+        dirMap.put("Left", Arrays.asList(3, 4, 5));
+
+        // Decide how the critter will move based on the direction map
+        int colChange = 0;
+        int rowChange = 0;
+        rowChange = dirMap.get("Up").contains(direction) ? 1 : rowChange;
+        rowChange = dirMap.get("Down").contains(direction) ? -1 : rowChange;
+        colChange = dirMap.get("Right").contains(direction) ? 1 : colChange;
+        colChange = dirMap.get("Left").contains(direction) ? -1 : colChange;
+        int new_y_coord = rowChange * numSteps;
+        int new_x_coord = colChange * numSteps;
+
+        // Make sure new position is valid through bounds checking
+        if (new_x_coord < 0) {
+            new_x_coord = assignment4.Params.world_width + new_x_coord;
+        } else if (new_x_coord >= assignment4.Params.world_width) {
+            new_x_coord = new_x_coord - assignment4.Params.world_width;
+        }
+        if (new_y_coord < 0) {
+            new_y_coord = assignment4.Params.world_height + new_y_coord;
+        } else if (new_y_coord >= assignment4.Params.world_height) {
+            new_y_coord = new_y_coord - assignment4.Params.world_height;
+        }
+        return new int[]{new_y_coord, new_x_coord};
+    }
 
     /**
      *
@@ -86,36 +119,16 @@ public abstract class Critter {
         }
         this.moved = true;
 
-        // Create a map for making sure directions get updated correctly
-        HashMap<String, List<Integer>> dirMap= new HashMap<>();
-        dirMap.put("Up", Arrays.asList(1, 2, 3));
-        dirMap.put("Down", Arrays.asList(5, 6, 7));
-        dirMap.put("Right", Arrays.asList(0, 1, 7));
-        dirMap.put("Left", Arrays.asList(3, 4, 5));
+        // Find new coordinate and move critter to location
+        int[] new_coords = look(numSteps, direction);
+        this.y_coord = new_coords[0];
+        this.x_coord = new_coords[1];
+	}
 
-        // Decide how the critter will move based on the direction map
-        int colChange = 0;
-        int rowChange = 0;
-        rowChange = dirMap.get("Up").contains(direction) ? 1 : rowChange;
-        rowChange = dirMap.get("Down").contains(direction) ? -1 : rowChange;
-        colChange = dirMap.get("Right").contains(direction) ? 1 : colChange;
-        colChange = dirMap.get("Left").contains(direction) ? -1 : colChange;
-
-        // Update the critter's row and column, making sure to check if too low/high
-        this.x_coord += colChange * numSteps;
-        this.y_coord += rowChange * numSteps;
-        if (this.x_coord < 0) {
-            this.x_coord = assignment4.Params.world_width + this.x_coord;
-        } else if (this.x_coord >= assignment4.Params.world_width) {
-            this.x_coord = this.x_coord - assignment4.Params.world_width;
-        }
-        if (this.y_coord < 0) {
-            this.y_coord = assignment4.Params.world_height + this.y_coord;
-        } else if (this.y_coord >= assignment4.Params.world_height) {
-            this.y_coord = this.y_coord - assignment4.Params.world_height;
-        }
-    }
-
+    /**
+     *
+     * @param direction
+     */
 	protected final void walk(int direction) {
 	    move(1, assignment4.Params.walk_energy_cost, direction);
 	}
