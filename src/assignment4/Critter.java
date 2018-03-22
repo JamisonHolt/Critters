@@ -177,11 +177,11 @@ public abstract class Critter {
 		}
 		System.out.println();		
 	}
-	
-	/* the TestCritter class allows some critters to "cheat". If you want to 
+
+	/* the TestCritter class allows some critters to "cheat". If you want to
 	 * create tests of your Critter model, you can create subclasses of this class
-	 * and then use the setter functions contained here. 
-	 * 
+	 * and then use the setter functions contained here.
+	 *
 	 * NOTE: you must make sure that the setter functions work with your implementation
 	 * of Critter. That means, if you're recording the positions of your critters
 	 * using some sort of external grid or some other data structure in addition
@@ -219,6 +219,11 @@ public abstract class Critter {
 	}
 
 	private static Critter resolve(Critter contender, Critter defender) {
+	    // Make sure current "residing" critter is alive
+        if (defender.energy <= 0) {
+            return contender;
+        }
+
         // Check if each critter wants to fight - run away if not
         boolean contenderFight = contender.fight(defender.toString());
         boolean defenderFight = defender.fight(contender.toString());
@@ -246,11 +251,11 @@ public abstract class Critter {
         int defRoll = getRandomInt(defender.energy);
         if (contRoll >= defRoll) {
             contender.energy += defender.energy / 2;
-            population.remove(defender);
+            defender.energy = 0;
             return contender;
         } else {
             defender.energy += contender.energy / 2;
-            population.remove(contender);
+            contender.energy = 0;
             return defender;
         }
 	}
