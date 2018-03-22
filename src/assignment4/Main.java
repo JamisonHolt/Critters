@@ -77,41 +77,43 @@ public class Main {
         String cmd = ogCmd.trim();
         cmd = cmd.replaceAll("\\s{2,}", " ");
 
+        // Make array of words in command and number of words
+        String[] cmdWords = cmd.split("\\s");
+        int numWords = cmdWords.length;
+
         // Handle Exceptions/Errors
         try {
-
             // Check all commands if single word or multi-word
-            if (cmd.equals("quit")) {
+            if (cmdWords[0].equals("quit")) {
+                if (numWords != 1) {throw new Exception();}
                 exit = true;
-            } else if (cmd.equals("show")) {
+            } else if (cmdWords[0].equals("show")) {
+                if (numWords != 1) {throw new Exception();}
                 Critter.displayWorld();
-            } else {
-                // Make array of words in command and number of words
-                String[] cmdWords = cmd.split("\\s");
-                int numWords = cmdWords.length;
-                // Manage multi-word commands
-                if (cmdWords[0].equals("step") && numWords <= 2) {
-                    int numSteps = numWords == 1 ? 1 : Integer.parseInt(cmdWords[1]);
-                    for (int i=0; i<numSteps; i++) {
-                        Critter.worldTimeStep();
-                    }
-                } else if (cmdWords[0].equals("seed") && numWords == 2) {
-                    long seedNum = (Long.parseLong(cmdWords[1]));
-                    System.out.println(seedNum);
-                    Critter.setSeed(seedNum);
-                } else if (cmdWords[0].equals("make") && (numWords == 2 || numWords == 3)) {
-                    int toMake = numWords == 2 ? 1 : Integer.parseInt(cmdWords[2]);
-                    for (int i=0; i<toMake; i++) {
-                        Critter.makeCritter(cmdWords[1]);
-                    }
-                } else if (cmdWords[0].equals("stats") && numWords == 2) {
-                    List<Critter> instances = Critter.getInstances(cmdWords[1]);
-                    Class.forName("assignment4." + cmdWords[1]).getMethod("runStats", List.class).invoke(null, instances);
-                } else {
-                    // Command not found - print as such
-                    System.out.println("error processing: " + ogCmd);
-//                    System.out.println("invalid command: " + cmd);
+            } else if (cmdWords[0].equals("step")) {
+                if (numWords > 2) {throw new Exception();}
+                int numSteps = numWords == 1 ? 1 : Integer.parseInt(cmdWords[1]);
+                for (int i=0; i<numSteps; i++) {
+                    Critter.worldTimeStep();
                 }
+            } else if (cmdWords[0].equals("seed")) {
+                if (numWords != 2) {throw new Exception();}
+                long seedNum = (Long.parseLong(cmdWords[1]));
+                System.out.println(seedNum);
+                Critter.setSeed(seedNum);
+            } else if (cmdWords[0].equals("make")) {
+                if (numWords != 2 && numWords != 3) {throw new Exception();}
+                int toMake = numWords == 2 ? 1 : Integer.parseInt(cmdWords[2]);
+                for (int i=0; i<toMake; i++) {
+                    Critter.makeCritter(cmdWords[1]);
+                }
+            } else if (cmdWords[0].equals("stats") && numWords == 2) {
+                if (numWords != 2) {throw new Exception();}
+                List<Critter> instances = Critter.getInstances(cmdWords[1]);
+                Class.forName("assignment4." + cmdWords[1]).getMethod("runStats", List.class).invoke(null, instances);
+            } else {
+                // Command not found - print as such
+                System.out.println("invalid command: " + cmd);
             }
         } catch (Exception e) {
             System.out.println("error processing: " + ogCmd);
