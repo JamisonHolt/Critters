@@ -31,6 +31,7 @@ public abstract class Critter {
 	private int x_coord;
 	private int y_coord;
 	private boolean moved = false;
+	private boolean fighting = false;
 
 	// Gets the package name.  This assumes that Critter and its subclasses are all in the same package.
 	static {
@@ -111,7 +112,6 @@ public abstract class Critter {
      * @param direction
      */
 	protected final void move(int numSteps, int energyCost, int direction) {
-        // TODO: Figure out what it means by "look functions added later"
         // Check if Critter has moved previously and update energy if so
         this.energy -= energyCost;
         if (this.moved) {
@@ -119,8 +119,15 @@ public abstract class Critter {
         }
         this.moved = true;
 
-        // Find new coordinate and move critter to location
+        // Find new coordinate and move critter to location, if not fighting and unoccupied
         int[] new_coords = look(numSteps, direction);
+        if (this.fighting) {
+            for (Critter crit : Critter.population) {
+                if (crit.y_coord == new_coords[0] && crit.x_coord == new_coords[1]) {
+                    return;
+                }
+            }
+        }
         this.y_coord = new_coords[0];
         this.x_coord = new_coords[1];
 	}
