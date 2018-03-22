@@ -2,9 +2,9 @@ package assignment4;
 /* CRITTERS Critter.java
  * EE422C Project 4 submission by
  * Replace <...> with your actual data.
- * <Student1 Name>
- * <Student1 EID>
- * <Student1 5-digit Unique No.>
+ * Jamison Holt
+ * Jah7327
+ * 15455
  * <Student2 Name>
  * <Student2 EID>
  * <Student2 5-digit Unique No.>
@@ -14,12 +14,6 @@ package assignment4;
 
 
 import java.util.*;
-
-/* see the PDF for descriptions of the methods and fields in this class
- * you may add fields, methods or inner classes to Critter ONLY if you make your additions private
- * no new public, protected or default-package code or data can be added to Critter
- */
-
 
 public abstract class Critter {
 	private static String myPackage;
@@ -34,45 +28,14 @@ public abstract class Critter {
 	private boolean fighting = false;
 
 	// Gets the package name.  This assumes that Critter and its subclasses are all in the same package.
-	static {
-		myPackage = Critter.class.getPackage().toString().split(" ")[1];
-	}
-
-	/**
-	 *
-	 * @param max
-	 * @return
-	 */
-	public static int getRandomInt(int max) {
-		return rand.nextInt(max);
-	}
-
-	/**
-	 *
-	 * @param new_seed
-	 */
-	public static void setSeed(long new_seed) {
-		rand = new java.util.Random(new_seed);
-	}
-
-	/**
-	 *
-	 * @return
-	 */
+	static {myPackage = Critter.class.getPackage().toString().split(" ")[1];}
+	public static int getRandomInt(int max) {return rand.nextInt(max);}
+	public static void setSeed(long new_seed) {rand = new java.util.Random(new_seed);}
 	public String toString() {return "";}
-
-	/**
-	 *
-	 * @return
-	 */
 	protected int getEnergy() {return energy;}
+    public abstract void doTimeStep();
+    public abstract boolean fight(String oponent);
 
-    /**
-     *
-     * @param numSteps
-     * @param direction
-     * @return
-     */
 	protected final int[] look(int numSteps, int direction) {
         // Create a map for making sure directions get updated correctly
         HashMap<String, List<Integer>> dirMap= new HashMap<>();
@@ -105,12 +68,6 @@ public abstract class Critter {
         return new int[]{new_y_coord, new_x_coord};
     }
 
-    /**
-     *
-     * @param numSteps
-     * @param energyCost
-     * @param direction
-     */
 	protected final void move(int numSteps, int energyCost, int direction) {
         // Check if Critter has moved previously and update energy if so
         this.energy -= energyCost;
@@ -132,35 +89,20 @@ public abstract class Critter {
         this.x_coord = new_coords[1];
 	}
 
-    /**
-     *
-     * @param direction
-     */
 	protected final void walk(int direction) {
 	    move(1, assignment4.Params.walk_energy_cost, direction);
 	}
 
-	/**
-	 *
-	 * @param direction
-	 */
 	protected final void run(int direction) {
 		move(2, assignment4.Params.run_energy_cost, direction);
 	}
 
-	/**
-	 *
-	 * @param offspring
-	 * @param direction
-	 */
 	protected final void reproduce(Critter offspring, int direction) {
 	    babies.add(offspring);
 	    offspring.walk(direction);
 	}
 
-	public abstract void doTimeStep();
-	public abstract boolean fight(String oponent);
-	
+
 	/**
 	 * create and initialize a Critter subclass.
 	 * critter_class_name must be the unqualified name of a concrete subclass of Critter, if not,
@@ -169,7 +111,7 @@ public abstract class Critter {
 	 * upper. For example, if craig is supplied instead of Craig, an error is thrown instead of
 	 * an Exception.)
 	 * @param critter_class_name
-	 * @throws InvalidCritterException
+	 * @throws Exception
 	 */
 	public static void makeCritter(String critter_class_name) throws Exception {
 		// Create new Critter based on class name provided - throw error if invalid
@@ -250,41 +192,22 @@ public abstract class Critter {
 		protected void setEnergy(int new_energy_value) {
 			super.energy = new_energy_value;
 		}
-		
 		protected void setX_coord(int new_x_coord) {
 			super.x_coord = new_x_coord;
 		}
-		
 		protected void setY_coord(int new_y_coord) {
 			super.y_coord = new_y_coord;
 		}
-		
 		protected int getX_coord() {
 			return super.x_coord;
 		}
-		
 		protected int getY_coord() {
 			return super.y_coord;
 		}
-		
+        protected static List<Critter> getBabies() { return babies; }
 
-		/*
-		 * This method getPopulation has to be modified by you if you are not using the population
-		 * ArrayList that has been provided in the starter code.  In any case, it has to be
-		 * implemented for grading tests to work.
-		 */
 		protected static List<Critter> getPopulation() {
 			return (List) new ArrayList<Critter>(population);
-		}
-		
-		/*
-		 * This method getBabies has to be modified by you if you are not using the babies
-		 * ArrayList that has been provided in the starter code.  In any case, it has to be
-		 * implemented for grading tests to work.  Babies should be added to the general population 
-		 * at either the beginning OR the end of every timestep.
-		 */
-		protected static List<Critter> getBabies() {
-			return babies;
 		}
 	}
 
@@ -292,7 +215,7 @@ public abstract class Critter {
 	 * Clear the world of all critters, dead and alive
 	 */
 	public static void clearWorld() {
-		// Complete this method.
+		population = new HashSet<Critter>();
 	}
 
 	private static Critter resolve(Critter contender, Critter defender) {
