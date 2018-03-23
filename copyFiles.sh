@@ -1,1 +1,0 @@
-cp ./src/assignment4/* ./test_sample/assignment4
