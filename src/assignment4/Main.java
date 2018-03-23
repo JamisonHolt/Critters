@@ -83,31 +83,36 @@ public class Main {
 
         // Handle Exceptions/Errors
         try {
-            // Check all commands if single word or multi-word
             if (cmdWords[0].equals("quit")) {
+                // Only works with command, no args - exit the program
                 if (numWords != 1) {throw new Exception();}
                 exit = true;
             } else if (cmdWords[0].equals("show")) {
+                // Only works with command, no args - prints the world out
                 if (numWords != 1) {throw new Exception();}
                 Critter.displayWorld();
             } else if (cmdWords[0].equals("step")) {
+                // Only works with 0 or 1 arg - performs a worldStep for 1+ steps
                 if (numWords > 2) {throw new Exception();}
                 int numSteps = numWords == 1 ? 1 : Integer.parseInt(cmdWords[1]);
                 for (int i=0; i<numSteps; i++) {
                     Critter.worldTimeStep();
                 }
             } else if (cmdWords[0].equals("seed")) {
+                // Only works with exactly 1 arg - Sets the rng seed
                 if (numWords != 2) {throw new Exception();}
                 long seedNum = (Long.parseLong(cmdWords[1]));
                 System.out.println(seedNum);
                 Critter.setSeed(seedNum);
             } else if (cmdWords[0].equals("make")) {
+                // Only works with 1 or 2 args - makes a specified critter a specified number of times
                 if (numWords != 2 && numWords != 3) {throw new Exception();}
                 int toMake = numWords == 2 ? 1 : Integer.parseInt(cmdWords[2]);
                 for (int i=0; i<toMake; i++) {
                     Critter.makeCritter(cmdWords[1]);
                 }
             } else if (cmdWords[0].equals("stats") && numWords == 2) {
+                // Only works with exactly 1 arg - prints the stats of a Critter type
                 if (numWords != 2) {throw new Exception();}
                 List<Critter> instances = Critter.getInstances(cmdWords[1]);
                 Class.forName("assignment4." + cmdWords[1]).getMethod("runStats", List.class).invoke(null, instances);
@@ -116,7 +121,7 @@ public class Main {
                 System.out.println("invalid command: " + cmd);
             }
         } catch (Exception e) {
-//            e.printStackTrace();
+            // All errors that aren't "invalid command" errors are "processing" errors
             System.out.println("error processing: " + ogCmd);
         }
     }
