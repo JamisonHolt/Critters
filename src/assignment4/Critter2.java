@@ -39,7 +39,7 @@ public class Critter2 extends TestCritter {
         if (enemy.equals("C") || enemy.equals("@")) {
             // Holts will only try to fight Craigs and Algae
             return true;
-        } else if (enemy.equals("H") && !(this.hasMoved)) {
+        } else if (enemy.equals("2") && !(this.hasMoved)) {
             // Holts are most afraid of their own kind - run and update preferred direction
             for (int i=0; i<8; i++) {
                 int[] new_coords = this.look(2, this.preferred_dir);
@@ -47,7 +47,7 @@ public class Critter2 extends TestCritter {
                 int col = new_coords[1];
                 return false;
             }
-        } else if (enemy.equals("J") && !(this.hasMoved)) {
+        } else if (enemy.equals("1") && !(this.hasMoved)) {
             // Holts are only a bit afraid of Jamisons - walk
             int fleeTo = this.preferred_dir;
             for (int i=0; i<8; i++) {

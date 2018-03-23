@@ -17,7 +17,7 @@ public class Critter1 extends TestCritter {
     @Override
     public boolean fight(String opponent) {
         // If fighting other creatures, run
-        if (opponent.equals("C") || opponent.equals("H")) {
+        if (opponent.equals("C") || opponent.equals("2")) {
             walk(assignment4.Critter.getRandomInt(8));
             return false;
         }
