@@ -278,6 +278,13 @@ public abstract class Critter {
 		protected static List<Critter> getPopulation() {
 			return (List) new ArrayList<Critter>(population);
 		}
+
+        /**
+         * Gets a grid of current critters that have moved to locations
+         *
+         * @return the grid of current critter locations, after movements
+         */
+        protected static Critter[][] getConflictGrid() { return conflictGrid; }
 	}
 
 	/**
