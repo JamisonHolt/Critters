@@ -3,16 +3,16 @@ package assignment4;
 import assignment4.Critter.TestCritter;
 
 /**
- * Jamison Critters attempt to bulk up, but are otherwise pretty boring/passive
+ * Critter1 Critters attempt to bulk up, but are otherwise pretty boring/passive
  * This Critter keeps track of the critter with the most energy from last turn,
  * and all critters above that amount can reproduce next turn
  */
-public class Jamison extends TestCritter {
+public class Critter1 extends TestCritter {
 
     public static int maxEnergy;
 
     @Override
-    public String toString() {return "J";}
+    public String toString() {return "1";}
 
     @Override
     public boolean fight(String opponent) {
@@ -26,13 +26,13 @@ public class Jamison extends TestCritter {
     }
 
     /**
-     * Reproduce if "bulkiest" Jamison and has 2x necessary energy.
+     * Reproduce if "bulkiest" Critter1 and has 2x necessary energy.
      * Also walk/run/stay randomly
      */
     @Override
     public void doTimeStep() {
         if (this.getEnergy() >= maxEnergy && maxEnergy > Params.min_reproduce_energy * 2) {
-            this.reproduce(new Jamison(), Critter.getRandomInt(8));
+            this.reproduce(new Critter1(), Critter.getRandomInt(8));
         }
         int random = assignment4.Critter.getRandomInt(9);
         if (random < 4) {
@@ -47,7 +47,7 @@ public class Jamison extends TestCritter {
 
     public static void runStats(java.util.List<Critter> jamisons) {
         System.out.print("" + jamisons.size() + " total Jamisons    ");
-        System.out.print("Max Jamison Energy: " + maxEnergy);
+        System.out.print("Max Critter1 Energy: " + maxEnergy);
         System.out.println();
     }
 }

@@ -6,26 +6,26 @@ import assignment4.Critter.TestCritter;
  * Critter with a preferred direction and way of tracking whether it has moved
  * Moves randomly, and will not run from a fight if it has moved
  */
-public class Holt extends TestCritter {
+public class Critter2 extends TestCritter {
 
     public int preferred_dir;
     private boolean hasMoved;
 
     /**
-     * Instantiates a Holt object with a random "preferred" direction
+     * Instantiates a Critter2 object with a random "preferred" direction
      */
-    public Holt() {
+    public Critter2() {
         // Assign a random, "preferred" direction, which our Critter will tend to
         this.preferred_dir = assignment4.Critter.getRandomInt(8);
     }
 
     /**
-     * Get the string representation of a Holt
+     * Get the string representation of a Critter2
      *
      * @return the String H
      */
     @Override
-    public String toString() {return "H";}
+    public String toString() {return "2";}
 
     /**
      * Fight method for Holts - run away from each other, fight Craigs/Algae, walk
@@ -68,11 +68,11 @@ public class Holt extends TestCritter {
     @Override
     public void doTimeStep() {
         this.hasMoved = false;
-        // If possible, run and add a new Holt in a different preferred direction
+        // If possible, run and add a new Critter2 in a different preferred direction
         if(this.getEnergy() > Params.min_reproduce_energy + Params.run_energy_cost) {
             this.hasMoved = true;
             this.run(this.preferred_dir);
-            Holt baby = new Holt();
+            Critter2 baby = new Critter2();
             baby.preferred_dir = (this.preferred_dir + 1) % 8;
             this.reproduce(baby, this.preferred_dir);
         } else {
@@ -94,7 +94,7 @@ public class Holt extends TestCritter {
         // Create array of directions to display percentages of
         int[] preferred_dirs = {0, 0, 0, 0, 0, 0, 0, 0};
         for (Critter holt : holts) {
-            preferred_dirs[((Holt) holt).preferred_dir] += 1;
+            preferred_dirs[((Critter2) holt).preferred_dir] += 1;
         }
 
         // Convert each count to a percentage
