@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a04217a-aab4-4c51-8d9b-ccffd9888825" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.~lock.README.odt#" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Holt.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Jamison.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/CritterWorld.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Holt.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter2.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Jamison.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter1.java" />
+      <change beforePath="$PROJECT_DIR$/Submission/README.pdf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Submission/src/assignment4/Critter.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Submission/src/assignment4/Critter1.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Submission/src/assignment4/Critter2.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Submission/src/assignment4/Main.java" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
