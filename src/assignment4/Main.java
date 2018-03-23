@@ -122,7 +122,6 @@ public class Main {
             }
         } catch (Exception e) {
             // All errors that aren't "invalid command" errors are "processing" errors
-            e.printStackTrace();
             System.out.println("error processing: " + ogCmd);
         }
     }

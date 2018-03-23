@@ -2,9 +2,14 @@ package assignment4;
 
 import assignment4.Critter.TestCritter;
 
+/**
+ * Critter with a preferred direction and way of tracking whether it has moved
+ * Moves randomly, and will not run from a fight if it has moved
+ */
 public class Holt extends TestCritter {
 
     public int preferred_dir;
+    private boolean hasMoved;
 
     /**
      * Instantiates a Holt object with a random "preferred" direction
@@ -31,47 +36,51 @@ public class Holt extends TestCritter {
      */
     @Override
     public boolean fight(String enemy) {
-        Critter[][] conflictGrid = getConflictGrid();
         if (enemy.equals("C") || enemy.equals("@")) {
             // Holts will only try to fight Craigs and Algae
             return true;
-        } else if (enemy.equals("H")) {
+        } else if (enemy.equals("H") && !(this.hasMoved)) {
             // Holts are most afraid of their own kind - run and update preferred direction
             for (int i=0; i<8; i++) {
                 int[] new_coords = this.look(2, this.preferred_dir);
                 int row = new_coords[0];
                 int col = new_coords[1];
-                if (conflictGrid[row][col] != null) {
-                    this.preferred_dir = (this.preferred_dir + 1) % 8;
-                }
+                return false;
             }
-        } else if (enemy.equals("J")) {
+        } else if (enemy.equals("J") && !(this.hasMoved)) {
             // Holts are only a bit afraid of Jamisons - walk
             int fleeTo = this.preferred_dir;
             for (int i=0; i<8; i++) {
                 int[] new_coords = this.look(1, fleeTo);
                 int row = new_coords[0];
                 int col = new_coords[1];
-                if (conflictGrid[row][col] != null) {
-                    fleeTo = (fleeTo + 1) % 8;
-                }
             }
+            return false;
         }
-        return false;
+        return true;
     }
 
     /**
      * Run a time step for a holt - run and reproduce if possible, else walk
      * Always moves in current preferred direction
+     * Babies will always have the next clockwise direction
      */
     @Override
     public void doTimeStep() {
-        // If possible, run and add a new Holt in this critter's current preferred direction
+        this.hasMoved = false;
+        // If possible, run and add a new Holt in a different preferred direction
         if(this.getEnergy() > Params.min_reproduce_energy + Params.run_energy_cost) {
+            this.hasMoved = true;
             this.run(this.preferred_dir);
-            this.reproduce(new Holt(), this.preferred_dir);
+            Holt baby = new Holt();
+            baby.preferred_dir = (this.preferred_dir + 1) % 8;
+            this.reproduce(baby, this.preferred_dir);
         } else {
-            this.walk(this.preferred_dir);
+            // Only walk 50% of time
+            if (assignment4.Critter.getRandomInt(2) == 1) {
+                this.hasMoved = true;
+                this.walk(this.preferred_dir);
+            }
         }
 
     }
@@ -89,15 +98,21 @@ public class Holt extends TestCritter {
         }
 
         // Convert each count to a percentage
-        for (int i=0; i<8; i++) {
-            preferred_dirs[i] = preferred_dirs[i] * 100 / holts.size();
+        if (holts.size() > 0) {
+            for (int i=0; i<8; i++) {
+                preferred_dirs[i] = preferred_dirs[i] * 100 / holts.size();
+            }
         }
 
         // Print out the stats by iterating through the array of percentages
         System.out.print("" + holts.size() + " total Holts    ");
         System.out.print("Preferred Direction percentages: ");
-        for (int i=0; i<8; i++) {
-            System.out.print(i + ":" + preferred_dirs[i] + "%,  ");
+        if (holts.size() > 0) {
+            for (int i=0; i<8; i++) {
+                System.out.print(i + ":" + preferred_dirs[i] + "%,  ");
+            }
+        } else {
+            System.out.print("None - all are dead :(");
         }
         System.out.println();
     }

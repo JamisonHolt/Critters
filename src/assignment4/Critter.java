@@ -284,7 +284,6 @@ public abstract class Critter {
          *
          * @return the grid of current critter locations, after movements
          */
-        protected static Critter[][] getConflictGrid() { return conflictGrid; }
 	}
 
 	/**
