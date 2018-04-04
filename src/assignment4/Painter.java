@@ -10,7 +10,6 @@
  * Slip days used: <0>
  * Fall 2015
  */
-package startercode;
 
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -40,10 +39,10 @@ public class Painter {
 	 * Paints the shape on a grid.
 	 */
 	public static void paint() {
-		Main.grid.getChildren().clear(); // clean up grid.
+		Main2.grid.getChildren().clear(); // clean up grid.
 		for (int i = 0; i <= 1; i++) {
 			Shape s = getIcon(i);	// convert the index to an icon.
-			Main.grid.add(s, i, i); // add the shape to the grid.
+			Main2.grid.add(s, i, i); // add the shape to the grid.
 		}
 		
 	}

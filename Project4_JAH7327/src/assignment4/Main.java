@@ -1,5 +1,5 @@
 package assignment4;
-/* CRITTERS Main.java
+/* CRITTERS Main2.java
 * EE422C Project 4 submission by
 * Replace <...> with your actual data.
 * Jamison Holt
