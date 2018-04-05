@@ -1,31 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/assignment4/Main.java" line="71" mnemonic="9" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="7a04217a-aab4-4c51-8d9b-ccffd9888825" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Critters.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Critters.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project4_JAH7327/src/assignment4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project4_JAH7327/src/assignment4/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example code/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/Main2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example code/Painter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/Painter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Algae.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Algae.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Craig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Craig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter$TestCritter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter$TestCritter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/InvalidCritterException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/InvalidCritterException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/MyCritter1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/MyCritter6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/MyCritter7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Params.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Params.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Critters/assignment4/A4SampleTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Critters/assignment4/A4SampleTest2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/AlgaephobicCritter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/AlgaephobicCritter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/TragicCritter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/TragicCritter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project4_JAH7327/README.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project4_JAH7327/src/assignment4/Critter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project4_JAH7327/src/assignment4/Critter1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project4_JAH7327/src/assignment4/Critter2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project4_JAH7327/src/assignment4/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/A4SampleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/A4SampleTest2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/Algae.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/Craig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/Critter$TestCritter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/Critter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/InvalidCritterException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/MyCritter1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/MyCritter6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/MyCritter7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/assignment4/Params.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/empty_world/expected_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/empty_world/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/error_processing/expected_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/error_processing/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/kill_all_critter/expected_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/kill_all_critter/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/make_large_critter/expected_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/make_large_critter/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/Controls.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/Main2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/Painter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Algae.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Craig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter$TestCritter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/InvalidCritterException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Params.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment4/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment4/Controls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/Controls.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment4/Main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment4/Painter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/Painter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,20 +57,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Painter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assignment4/Painter.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main2.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/assignment4/Main2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+            <state relative-caret-position="294">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,38 +69,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlgaephobicCritter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assignment4/AlgaephobicCritter.java">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assignment4/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+            <state relative-caret-position="399">
+              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3149#3150#0" expanded="true" />
+                <element signature="e#3170#3171#0" expanded="true" />
+                <element signature="e#3209#3210#0" expanded="true" />
+                <element signature="e#3231#3232#0" expanded="true" />
+                <element signature="e#2972#2973#0" expanded="true" />
+                <element signature="e#3002#3003#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TragicCritter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assignment4/TragicCritter.java">
+      <file leaf-file-name="Controls.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assignment4/Controls.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+            <state>
+              <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Critter2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assignment4/Critter2.java">
+      <file leaf-file-name="Painter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assignment4/Painter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Params.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="316">
+              <caret line="43" column="58" lean-forward="true" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -104,9 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>make</find>
-      <find>runstats</find>
-      <find>worldtime</find>
       <find>defender</find>
       <find>defender.run</find>
       <find>system.out.println(def</find>
@@ -116,12 +126,12 @@
       <find>print</find>
       <find>System.out.println(</find>
       <find>private</find>
-      <find>new Critter[Param</find>
+      <find />
       <find>rest</find>
       <find>Params.world_</find>
       <find>params.world</find>
-      <find>error pr</find>
-      <find>Critter resolve</find>
+      <find />
+      <find />
       <find>look</find>
       <find>population</find>
       <find>run</find>
@@ -134,6 +144,9 @@
       <find>this.preferred</find>
       <find>system.out.print</find>
       <find>painter.</find>
+      <find>package</find>
+      <find>t</find>
+      <find>makeComb</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,20 +167,22 @@
         <option value="$PROJECT_DIR$/src/assignment4/Critter1.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Params.java" />
         <option value="$PROJECT_DIR$/example code/Main.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/Main.java" />
         <option value="$PROJECT_DIR$/src/assignment4/AlgaephobicCritter.java" />
         <option value="$PROJECT_DIR$/src/assignment4/TragicCritter.java" />
+        <option value="$PROJECT_DIR$/out/production/Critters/Controls.fxml" />
+        <option value="$PROJECT_DIR$/out/production/Critters/assignment4/Controls.fxml" />
+        <option value="$PROJECT_DIR$/src/assignment4/Controls.fxml" />
+        <option value="$PROJECT_DIR$/src/assignment4/Main2.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Painter.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Controller.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/Main2.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/Main.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="960" />
-    <option name="y" value="24" />
-    <option name="width" value="960" />
-    <option name="height" value="1011" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="-4" />
+    <option name="width" value="1920" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -219,15 +234,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CritterWorld" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Java-Projects/Project 5 - Critters Pt. 2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assignment4" />
+      <recent name="$PROJECT_DIR$/out/production/Critters/assignment4" />
+      <recent name="$PROJECT_DIR$/out/production/Critters" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/out/production/Critters/assignment4" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -242,7 +262,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main2">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -253,10 +273,10 @@
       <module name="Critters" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
-    <configuration name="Main2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Main2" />
+      <option name="MAIN_CLASS_NAME" value="assignment4.Main" />
       <module name="Critters" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
@@ -364,11 +384,10 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.A4SampleTest" />
       <item itemvalue="JUnit.A4SampleTest2" />
-      <item itemvalue="Application.Main2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main2" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -418,7 +437,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="24" width="960" height="1011" extended-state="4" />
+    <frame x="0" y="-4" width="1920" height="1039" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -429,28 +448,27 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50416666" side_tool="true" weight="0.3392265" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49583334" visible="true" weight="0.26467332" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49583334" visible="true" weight="0.2567132" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17916666" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08958333" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39977852" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info id="Designer" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32928178" />
@@ -462,7 +480,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="Image Layers" order="5" />
-      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -471,6 +489,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info id="Capture Tool" order="2" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32928178" />
       <window_info anchor="right" id="Maven Projects" order="4" />
@@ -482,83 +501,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="14" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Painter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding>
-            <element signature="e#4756#4757#0" expanded="true" />
-            <element signature="e#4821#4822#0" expanded="true" />
-            <element signature="e#5033#5034#0" expanded="true" />
-            <element signature="e#5094#5095#0" expanded="true" />
-            <element signature="e#10723#10724#0" expanded="true" />
-            <element signature="e#10765#10766#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2709">
-          <caret line="136" column="42" lean-forward="true" selection-start-line="136" selection-start-column="42" selection-end-line="136" selection-end-column="42" />
-          <folding>
-            <element signature="e#4756#4757#0" expanded="true" />
-            <element signature="e#4821#4822#0" expanded="true" />
-            <element signature="e#5033#5034#0" expanded="true" />
-            <element signature="e#5094#5095#0" expanded="true" />
-            <element signature="e#10723#10724#0" expanded="true" />
-            <element signature="e#10765#10766#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="e#4756#4757#0" expanded="true" />
-            <element signature="e#4821#4822#0" expanded="true" />
-            <element signature="e#5033#5034#0" expanded="true" />
-            <element signature="e#5094#5095#0" expanded="true" />
-            <element signature="e#10723#10724#0" expanded="true" />
-            <element signature="e#10765#10766#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="924">
+          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -786,20 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -815,10 +751,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/jfxrt.jar!/javafx/event/EventHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/jfxrt.jar!/javafx/collections/FXCollections.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/jfxrt.jar!/javafx/collections/MapChangeListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/jfxrt.jar!/javafx/fxml/FXMLLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="544" selection-start-line="544" selection-end-line="544" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Critters/Painter.class" />
     <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        <state relative-caret-position="184">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -827,15 +799,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Painter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        <state relative-caret-position="316">
+          <caret line="43" column="58" lean-forward="true" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Main2.java">
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Controls.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        <state>
+          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3149#3150#0" expanded="true" />
+            <element signature="e#3170#3171#0" expanded="true" />
+            <element signature="e#3209#3210#0" expanded="true" />
+            <element signature="e#3231#3232#0" expanded="true" />
+            <element signature="e#2972#2973#0" expanded="true" />
+            <element signature="e#3002#3003#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -859,7 +855,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>

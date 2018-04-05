@@ -1,132 +1,54 @@
 package assignment4;
-/* CRITTERS Main2.java
-* EE422C Project 4 submission by
-* Replace <...> with your actual data.
-* Jamison Holt
-* Jah7327
-* 15455
-* <Student2 Name>
-* <Student2 EID>
-* <Student2 5-digit Unique No.>
-* Slip days used: <0>
-* Fall 2016
-*/
 
-import java.util.Scanner;
-import java.util.List;
-import java.io.*;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
-/*
-* Usage: java <pkgname>.Main <input file> test
-* input file is optional.  If input file is specified, the word 'test' is optional.
-* May not use 'test' argument without specifying input file.
-*/
-public class Main {
+import java.awt.*;
 
-    static Scanner kb;	// scanner connected to keyboard input, or input file
-    private static String inputFile;	// input file, used instead of keyboard input if specified
-    static ByteArrayOutputStream testOutputString;	// if test specified, holds all console output
-    private static String myPackage;	// package of Critter file.  Critter cannot be in default pkg.
-    private static boolean DEBUG = false; // Use it or not, as you wish!
-    static PrintStream old = System.out;	// if you want to restore output to console
+public class Main extends Application {
+	static GridPane grid = new GridPane();
+	private static double screenWidth;
+	private static double screenHeight;
+	private static double stageSideLength;
+	private static double tileSideLength;
+	private Stage controlPane = new Stage();
 
-
-    // Gets the package name.  The usage assumes that Critter and its subclasses are all in the same package.
-    static {
-        myPackage = Critter.class.getPackage().toString().split(" ")[1];
-    }
-
-    /**
-    * Main method.
-    * @param args args can be empty.  If not empty, provide two parameters -- the first is a file name,
-    * and the second is test (for test output, where all output to be directed to a String), or nothing.
-    */
-    public static void main(String[] args) {
-        if (args.length != 0) {
-            try {
-                inputFile = args[0];
-                kb = new Scanner(new File(inputFile));
-            } catch (FileNotFoundException e) {
-                System.out.println("USAGE: java Main OR java Main <input file> <test output>");
-                e.printStackTrace();
-            } catch (NullPointerException e) {
-                System.out.println("USAGE: java Main OR java Main <input file>  <test output>");
-            }
-            if (args.length >= 2) {
-                if (args[1].equals("test")) { // if the word "test" is the second argument to java
-                // Create a stream to hold the output
-                testOutputString = new ByteArrayOutputStream();
-                PrintStream ps = new PrintStream(testOutputString);
-                // Save the old System.out.
-                old = System.out;
-                // Tell Java to use the special stream; all console output will be redirected here from now
-                System.setOut(ps);
-            }
-        }
-    } else { // if no arguments to main
-        kb = new Scanner(System.in); // use keyboard and console
-    }
-
-    /* Write your code below. */
-    boolean exit = false;
-    while (!exit) {
-        // Get and clean next user commmand
-        System.out.print("critters>");
-        String ogCmd = kb.nextLine();
-        String cmd = ogCmd.trim();
-        cmd = cmd.replaceAll("\\s{2,}", " ");
-
-        // Make array of words in command and number of words
-        String[] cmdWords = cmd.split("\\s");
-        int numWords = cmdWords.length;
-
-        // Handle Exceptions/Errors
+    @Override
+    public void start(Stage world) {
         try {
-            if (cmdWords[0].equals("quit")) {
-                // Only works with command, no args - exit the program
-                if (numWords != 1) {throw new Exception();}
-                exit = true;
-            } else if (cmdWords[0].equals("show")) {
-                // Only works with command, no args - prints the world out
-                if (numWords != 1) {throw new Exception();}
-                Critter.displayWorld();
-            } else if (cmdWords[0].equals("step")) {
-                // Only works with 0 or 1 arg - performs a worldStep for 1+ steps
-                if (numWords > 2) {throw new Exception();}
-                int numSteps = numWords == 1 ? 1 : Integer.parseInt(cmdWords[1]);
-                for (int i=0; i<numSteps; i++) {
-                    Critter.worldTimeStep();
-                }
-            } else if (cmdWords[0].equals("seed")) {
-                // Only works with exactly 1 arg - Sets the rng seed
-                if (numWords != 2) {throw new Exception();}
-                long seedNum = (Long.parseLong(cmdWords[1]));
-                System.out.println(seedNum);
-                Critter.setSeed(seedNum);
-            } else if (cmdWords[0].equals("make")) {
-                // Only works with 1 or 2 args - makes a specified critter a specified number of times
-                if (numWords != 2 && numWords != 3) {throw new Exception();}
-                int toMake = numWords == 2 ? 1 : Integer.parseInt(cmdWords[2]);
-                for (int i=0; i<toMake; i++) {
-                    Critter.makeCritter(cmdWords[1]);
-                }
-            } else if (cmdWords[0].equals("stats") && numWords == 2) {
-                // Only works with exactly 1 arg - prints the stats of a Critter type
-                if (numWords != 2) {throw new Exception();}
-                List<Critter> instances = Critter.getInstances(cmdWords[1]);
-                Class.forName("assignment4." + cmdWords[1]).getMethod("runStats", List.class).invoke(null, instances);
-            } else {
-                // Command not found - print as such
-                System.out.println("invalid command: " + cmd);
-            }
-        } catch (Exception e) {
-            // All errors that aren't "invalid command" errors are "processing" errors
-            System.out.println("error processing: " + ogCmd);
+            // Show the controller component
+            Parent fxml = FXMLLoader.load(getClass().getResource("../Controls.fxml"));
+            controlPane.setScene(new Scene(fxml));
+            controlPane.setX(screenWidth - 300);
+            controlPane.show();
+
+            // Create our critter grid
+            world.setScene(new Scene(grid, screenWidth-310, screenHeight));
+            world.setX(0);
+            world.setY(0);
+            world.show();
+
+            Painter.paint();
+
+        } catch(Exception e) {
+            e.printStackTrace();
         }
     }
-    /* Write your code above */
-    System.out.flush();
 
-}
+	public static void main(String[] args) {
+		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+		screenWidth = screen.getWidth();
+		screenHeight = screen.getHeight();
+		stageSideLength = screenWidth < screenHeight ? screenWidth : screenHeight;
+
+
+
+		grid.setGridLinesVisible(true);
+		launch(args);
+	}
 }

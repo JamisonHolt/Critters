@@ -1,3 +1,5 @@
+package assignment4;
+
 /* CRITTERS Critter.java
  * EE422C Project 4 submission by
  * Replace <...> with your actual data.
@@ -39,10 +41,10 @@ public class Painter {
 	 * Paints the shape on a grid.
 	 */
 	public static void paint() {
-		Main2.grid.getChildren().clear(); // clean up grid.
+		Main.grid.getChildren().clear(); // clean up grid.
 		for (int i = 0; i <= 1; i++) {
 			Shape s = getIcon(i);	// convert the index to an icon.
-			Main2.grid.add(s, i, i); // add the shape to the grid.
+			Main.grid.add(s, i, i); // add the shape to the grid.
 		}
 		
 	}
