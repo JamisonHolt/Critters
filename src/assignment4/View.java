@@ -16,6 +16,7 @@ package assignment4;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
+import assignmnet4.Polygons.*;
 
 import java.util.List;
 
@@ -24,15 +25,19 @@ public class View {
 	/*
 	 * Returns a square or a circle, according to shapeIndex
 	 */
-	static Shape getIcon(int shapeIndex) {
+	static Shape getIcon(CritterShape shape) {
 		Shape s = null;
 		double size = assignment4.Main.tileSideLength;
 		
-		switch(shapeIndex) {
-		case 0: s = new Rectangle(size, size); 
+		switch(shape) {
+		case SQUARE: s = new Rectangle(size, size);
 			s.setFill(javafx.scene.paint.Color.RED); break;
-		case 1: s = new Circle(size/2); 
+		case CIRCLE: s = new Circle(size/2);
 			s.setFill(javafx.scene.paint.Color.GREEN); break;
+		case TRIANGLE: s = new Triangle(size);
+			break;
+		case DIAMOND: s = new Diamond(size);
+			break;
 		}
 		// set the outline of the shape
 		s.setStroke(javafx.scene.paint.Color.BLUE); // outline
@@ -52,12 +57,15 @@ public class View {
 			outputGrid[crit.getY_coord()][crit.getX_coord()] = crit;
 		}
 
+		int curr = 0;
 		for (int row=0; row<Params.world_height; row++) {
 			for (int col = 0; col < Params.world_width; col++) {
+				curr = (curr + 1) % 4;
 				if (outputGrid[row][col] != null) {
-					Main.grid.add(getIcon(1), row, col);
+					Critter crit = outputGrid[row][col];
+					Main.grid.add(getIcon(crit.viewShape()), row, col);
 				} else {
-					Main.grid.add(getIcon(0), row, col);
+					Main.grid.add(getIcon(CritterShape.SQUARE), row, col);
 				}
 			}
 		}

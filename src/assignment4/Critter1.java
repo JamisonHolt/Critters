@@ -12,6 +12,11 @@ public class Critter1 extends TestCritter {
     public static int maxEnergy;
 
     @Override
+    public CritterShape viewShape() {
+        return CritterShape.TRIANGLE;
+    }
+
+    @Override
     public String toString() {return "1";}
 
     @Override

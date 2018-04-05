@@ -19,6 +19,11 @@ public class Critter2 extends TestCritter {
         this.preferred_dir = assignment4.Critter.getRandomInt(8);
     }
 
+    @Override
+    public CritterShape viewShape() {
+        return CritterShape.DIAMOND;
+    }
+
     /**
      * Get the string representation of a Critter2
      *

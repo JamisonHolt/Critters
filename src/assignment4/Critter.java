@@ -49,6 +49,10 @@ public abstract class Critter {
 
 	public int getY_coord() {return this.y_coord;}
 
+	public CritterShape viewShape() {
+		return CritterShape.SQUARE;
+	}
+
     /**
      * Return cleaned coordinates a certain number of steps in a direction
      *
