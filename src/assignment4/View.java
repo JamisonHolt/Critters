@@ -17,14 +17,16 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class Painter {
+import java.util.List;
+
+public class View {
 
 	/*
 	 * Returns a square or a circle, according to shapeIndex
 	 */
 	static Shape getIcon(int shapeIndex) {
 		Shape s = null;
-		int size = 100;
+		double size = assignment4.Main.tileSideLength;
 		
 		switch(shapeIndex) {
 		case 0: s = new Rectangle(size, size); 
@@ -40,12 +42,24 @@ public class Painter {
 	/*
 	 * Paints the shape on a grid.
 	 */
-	public static void paint() {
+	public static void paintWorld() {
 		Main.grid.getChildren().clear(); // clean up grid.
-		for (int i = 0; i <= 1; i++) {
-			Shape s = getIcon(i);	// convert the index to an icon.
-			Main.grid.add(s, i, i); // add the shape to the grid.
+
+		// Find all currently living critters and add to a grid for output
+		List<Critter> population = assignment4.Critter.TestCritter.getPopulation();
+		Critter[][] outputGrid = new Critter[Params.world_height][Params.world_width];
+		for (Critter crit : population) {
+			outputGrid[crit.getY_coord()][crit.getX_coord()] = crit;
 		}
-		
+
+		for (int row=0; row<Params.world_height; row++) {
+			for (int col = 0; col < Params.world_width; col++) {
+				if (outputGrid[row][col] != null) {
+					Main.grid.add(getIcon(1), row, col);
+				} else {
+					Main.grid.add(getIcon(0), row, col);
+				}
+			}
+		}
 	}
 }

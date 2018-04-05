@@ -106,6 +106,7 @@ public class Controller {
 
         // Use our old console model for debugging purposes
         Critter.displayWorld();
+        View.paintWorld();
     }
 
     public void runDisplayStats() {

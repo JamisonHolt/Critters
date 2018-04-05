@@ -12,29 +12,35 @@ import java.awt.*;
 
 public class Main extends Application {
 	static GridPane grid = new GridPane();
-	private static double screenWidth;
-	private static double screenHeight;
-	private static double stageSideLength;
-	private static double tileSideLength;
-	private Stage controlPane = new Stage();
+	public static double stageWidth;
+	public static double stageHeight;
+	public static double tileSideLength;
+	public Stage controlPane = new Stage();
 
     @Override
     public void start(Stage world) {
         try {
-            // Show the controller component
-            Parent fxml = FXMLLoader.load(getClass().getResource("../Controls.fxml"));
-            controlPane.setScene(new Scene(fxml));
-            controlPane.setX(screenWidth - 300);
-            controlPane.show();
-
             // Create our critter grid
-            world.setScene(new Scene(grid, screenWidth-310, screenHeight));
+            world.setScene(new Scene(grid, stageWidth, stageHeight));
             world.setX(0);
             world.setY(0);
             world.show();
 
-            Painter.paint();
+            // Check for grid size changes
+            world.widthProperty().addListener((obs) -> {
+                setStageProps(world.getHeight(), world.getWidth());
+                View.paintWorld();
+            });
+            world.heightProperty().addListener((obs) -> {
+                setStageProps(world.getHeight(), world.getWidth());
+                View.paintWorld();
+            });
 
+            // Show the controller component
+            Parent fxml = FXMLLoader.load(getClass().getResource("../Controls.fxml"));
+            controlPane.setScene(new Scene(fxml));
+            controlPane.setX(stageWidth);
+            controlPane.show();
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -42,13 +48,17 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-		screenWidth = screen.getWidth();
-		screenHeight = screen.getHeight();
-		stageSideLength = screenWidth < screenHeight ? screenWidth : screenHeight;
-
-
+		setStageProps(screen.getHeight(), screen.getWidth());
 
 		grid.setGridLinesVisible(true);
 		launch(args);
 	}
+
+    public static void setStageProps(double newHeight, double newWidth) {
+        double numHigh = newHeight / Params.world_height;
+        double numWide = newWidth / Params.world_width;
+        tileSideLength = numHigh < numWide ? numHigh : numWide;
+        stageWidth = tileSideLength * Params.world_width;
+        stageHeight = tileSideLength * Params.world_height;
+    }
 }

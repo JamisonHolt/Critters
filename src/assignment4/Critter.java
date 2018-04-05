@@ -45,6 +45,10 @@ public abstract class Critter {
 
     public abstract boolean fight(String oponent);
 
+    public int getX_coord() {return this.x_coord;}
+
+	public int getY_coord() {return this.y_coord;}
+
     /**
      * Return cleaned coordinates a certain number of steps in a direction
      *
@@ -263,14 +267,6 @@ public abstract class Critter {
 
 		protected void setY_coord(int new_y_coord) {
 			super.y_coord = new_y_coord;
-		}
-
-		protected int getX_coord() {
-			return super.x_coord;
-		}
-
-		protected int getY_coord() {
-			return super.y_coord;
 		}
 
 		protected static List<Critter> getBabies() { return babies; }
