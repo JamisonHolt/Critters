@@ -1,5 +1,6 @@
 package assignment4;
 
+import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -9,6 +10,7 @@ import javafx.event.ActionEvent;
 
 public class Controller {
     private boolean run;
+    private AnimationTimer timer;
 
     @FXML
     private TextField makeTextField;
@@ -17,37 +19,13 @@ public class Controller {
     private ChoiceBox makeChoiceBox;
 
     @FXML
-    private Button makeButton;
-
-    @FXML
     private TextField timeStepTextField;
-
-    @FXML
-    private Button timeStepButton;
 
     @FXML
     private TextField setSeedTextField;
 
     @FXML
-    private Button setSeedButton;
-
-    @FXML
-    private Button displayWorldButton;
-
-    @FXML
-    private Button displayStatsButton;
-
-    @FXML
-    private Button startAnimationButton;
-
-    @FXML
     private TextField animationTextField;
-
-    @FXML
-    private Button stopAnimationButton;
-
-    @FXML
-    private Button exitSimulationButton;
 
     @FXML
     public void initialize() {
@@ -62,8 +40,10 @@ public class Controller {
     }
 
     public void runMake() throws InvalidCritterException {
-        int numToMake;
+        // Make sure animation is not running
+        if (run) {return;}
 
+        int numToMake;
         // Make sure that a valid number is entered
         try {
             numToMake = Integer.parseInt(makeTextField.getCharacters().toString());
@@ -81,8 +61,10 @@ public class Controller {
     }
 
     public void runTimeStep() {
-        int numSteps;
+        // Make sure animation is not running
+        if (run) {return;}
 
+        int numSteps;
         // Make sure that a valid number is entered
         try {
             numSteps = Integer.parseInt(timeStepTextField.getCharacters().toString());
@@ -100,8 +82,10 @@ public class Controller {
     }
 
     public void runSetSeed() {
-        long seedNum;
+        // Make sure animation is not running
+        if (run) {return;}
 
+        long seedNum;
         // Make sure a valid seed number is entered
         try {
             seedNum = Long.parseLong(setSeedTextField.getCharacters().toString());
@@ -117,24 +101,63 @@ public class Controller {
     }
 
     public void runDisplayWorld() {
+        // Make sure animation is not running
+        if (run) {return;}
+
         // Use our old console model for debugging purposes
         Critter.displayWorld();
     }
 
     public void runDisplayStats() {
+        // Make sure animation is not running
+        if (run) {return;}
+
 //        Critter.runStats();
         return;
     }
 
     public void runStartAnimation() {
-        return;
+        // Make sure to avoid multiple timers
+        if (run) {return;}
+
+        run = true;
+        timer = new AnimationTimer() {
+            private long lastUpdate = 0;
+            @Override public void handle(long time) {
+                if (run) {
+                    int FPS;
+                    try {
+                        FPS = Integer.parseInt(animationTextField.getCharacters().toString());
+                    } catch (Exception e) {
+                        // Allow user to enter new text if previous wasn't valid
+                        FPS = 1;
+                    }
+                    for (int i=0; i<FPS; i++) {
+                        Critter.worldTimeStep();
+                    }
+                    run = false;
+                    runDisplayWorld();
+                    runDisplayStats();
+                    run = true;
+                }
+            }
+        };
+        timer.start();
     }
 
     public void runStopAnimation() {
-        return;
+        // Make sure there exists a timer to begin with
+        if (timer == null) {return;}
+
+        // Allow other functions to work again and stop current timer
+        run = false;
+        timer.stop();
     }
 
     public void runExitSimulation() {
+        // Make sure animation is not running
+        if (run) {return;}
+
         System.exit(0);
     }
 }
