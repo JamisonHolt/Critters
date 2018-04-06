@@ -1,17 +1,12 @@
-package assignment4;
 /* CRITTERS Critter.java
  * EE422C Project 4 submission by
- * Replace <...> with your actual data.
  * Jamison Holt
  * Jah7327
  * 15455
- * <Student2 Name>
- * <Student2 EID>
- * <Student2 5-digit Unique No.>
- * Slip days used: <0>
- * Fall 2016
+ * Spring 2018
  */
 
+package assignment4;
 
 import java.util.*;
 import javafx.scene.paint.Color;

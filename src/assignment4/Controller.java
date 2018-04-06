@@ -1,4 +1,14 @@
+/* CRITTERS Critter.java
+ * EE422C Project 4 submission by
+ * Jamison Holt
+ * Jah7327
+ * 15455
+ * Spring 2018
+ */
+
+
 package assignment4;
+
 
 import javafx.animation.AnimationTimer;
 import javafx.beans.value.ChangeListener;
@@ -11,6 +21,9 @@ import java.util.HashSet;
 import java.util.Arrays;
 
 
+/**
+ * The main controller panel representation for our world
+ */
 public class Controller {
     private boolean run;
     private AnimationTimer timer;
@@ -33,6 +46,10 @@ public class Controller {
     @FXML
     private ChoiceBox displayStatsChoiceBox;
 
+    /**
+     * Finds all critter classes that exist in the assignment folder, adds them to our choice boxes, and states that
+     * animations are not running currently
+     */
     @FXML
     public void initialize() {
         // Find all new Critter classes
@@ -52,8 +69,9 @@ public class Controller {
                     displayStatsChoiceBox.getItems().addAll(toAdd);
                 }
             }
-
         }
+
+        // Add a listener to update which critter's stats are being viewed, based on what is in the box
         displayStatsChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
@@ -61,11 +79,17 @@ public class Controller {
             }
         });
 
+        // set basic interface defaults
         run = false;
         makeChoiceBox.setValue(makeChoiceBox.getItems().get(0));
         displayStatsChoiceBox.setValue(displayStatsChoiceBox.getItems().get(0));
     }
 
+    /**
+     * Makes a new critter based on what's in the text box
+     *
+     * @throws InvalidCritterException
+     */
     public void runMake() throws InvalidCritterException {
         // Make sure animation is not running
         if (run) {return;}
@@ -87,6 +111,9 @@ public class Controller {
         }
     }
 
+    /**
+     * Runs the appropriate number of time steps specified
+     */
     public void runTimeStep() {
         // Make sure animation is not running
         if (run) {return;}
@@ -108,6 +135,9 @@ public class Controller {
         }
     }
 
+    /**
+     * Set a new random seed for the world
+     */
     public void runSetSeed() {
         // Make sure animation is not running
         if (run) {return;}
@@ -127,6 +157,9 @@ public class Controller {
         Critter.setSeed(seedNum);
     }
 
+    /**
+     * Use our model to display any changes in the world
+     */
     public void runDisplayWorld() {
         // Make sure animation is not running
         if (run) {return;}
@@ -135,6 +168,9 @@ public class Controller {
         Critter.displayWorld();
     }
 
+    /**
+     * Use our model to display the necessary stats of the world
+     */
     public void runDisplayStats() {
         // Make sure animation is not running
         if (run) {return;}
@@ -146,6 +182,9 @@ public class Controller {
         return;
     }
 
+    /**
+     * Start animating the world by adding an animation timer and locking all other functions
+     */
     public void runStartAnimation() {
         // Make sure to avoid multiple timers
         if (run) {return;}
@@ -154,7 +193,9 @@ public class Controller {
         timer = new AnimationTimer() {
             private long lastUpdate = 0;
             @Override public void handle(long time) {
+                // Only run while this has not been stoppped
                 if (run) {
+                    // Retrieve the current FPS
                     int FPS;
                     try {
                         FPS = Integer.parseInt(animationTextField.getCharacters().toString());
@@ -162,9 +203,13 @@ public class Controller {
                         // Allow user to enter new text if previous wasn't valid
                         FPS = 1;
                     }
+
+                    // Run the appropriate number of time steps in the world based on FPS
                     for (int i=0; i<FPS; i++) {
                         Critter.worldTimeStep();
                     }
+
+                    // Allow other functions to be run by turning off "run" blocking, and then re-enable
                     run = false;
                     runDisplayWorld();
                     runDisplayStats();
@@ -172,9 +217,13 @@ public class Controller {
                 }
             }
         };
+        // Start our timer
         timer.start();
     }
 
+    /**
+     * Stops animation by disabling the timer and unblocking other fxns
+     */
     public void runStopAnimation() {
         // Make sure there exists a timer to begin with
         if (timer == null) {return;}
@@ -184,6 +233,9 @@ public class Controller {
         timer.stop();
     }
 
+    /**
+     * Exits the simulation for good
+     */
     public void runExitSimulation() {
         // Make sure animation is not running
         if (run) {return;}

@@ -1,8 +1,15 @@
+/* CRITTERS Critter.java
+ * EE422C Project 4 submission by
+ * Jamison Holt
+ * Jah7327
+ * 15455
+ * Spring 2018
+ */
+
 package assignment4;
 
 import assignment4.Critter.TestCritter;
 
-import javafx.scene.shape.Shape;
 import javafx.scene.paint.Color;
 
 /**

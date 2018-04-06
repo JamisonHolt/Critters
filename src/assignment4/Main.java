@@ -1,17 +1,26 @@
+/* CRITTERS Critter.java
+ * EE422C Project 4 submission by
+ * Jamison Holt
+ * Jah7327
+ * 15455
+ * Spring 2018
+ */
+
+
 package assignment4;
+
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.scene.text.Text;
-import javafx.scene.Group;
-
 import java.awt.*;
 
+/**
+ * Our main application class to be run
+ */
 public class Main extends Application {
 	static public GridPane grid = new GridPane();
     static public Stage statsPane = new Stage();
@@ -21,6 +30,11 @@ public class Main extends Application {
 	public static double stageHeight;
 	public static double tileSideLength;
 
+    /**
+     * Initialize our world stage using pre-configured jfx and world
+     *
+     * @param world the world to be displayed on screen
+     */
     @Override
     public void start(Stage world) {
         try {
@@ -30,7 +44,7 @@ public class Main extends Application {
             world.setY(0);
             world.show();
 
-            // Check for grid size changes
+            // Check for grid size changes and update paint
             world.widthProperty().addListener((obs) -> {
                 setStageProps(world.getHeight(), world.getWidth());
                 View.paintWorld();
@@ -57,6 +71,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Run the program
+     *
+     * @param args
+     */
 	public static void main(String[] args) {
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		setStageProps(screen.getHeight(), screen.getWidth());
@@ -65,6 +84,12 @@ public class Main extends Application {
 		launch(args);
 	}
 
+    /**
+     * Set stage properties to allow for scalability on different stage sizes
+     *
+     * @param newHeight The updated height of the stage
+     * @param newWidth The updated width of the stage
+     */
     public static void setStageProps(double newHeight, double newWidth) {
         double numHigh = newHeight / Params.world_height;
         double numWide = newWidth / Params.world_width;

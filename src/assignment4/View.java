@@ -1,17 +1,12 @@
-package assignment4;
-
 /* CRITTERS Critter.java
  * EE422C Project 4 submission by
- * Replace <...> with your actual data.
- * <Student1 Name>
- * <Student1 EID>
- * <Student1 5-digit Unique No.>
- * <Student2 Name>
- * <Student2 EID>
- * <Student2 5-digit Unique No.>
- * Slip days used: <0>
- * Fall 2015
+ * Jamison Holt
+ * Jah7327
+ * 15455
+ * Spring 2018
  */
+
+package assignment4;
 
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -22,33 +17,11 @@ import javafx.scene.text.Text;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 
-import java.io.File;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 
 public class View {
 	public static String statsCritter;
-
-	static ArrayList<String> critterTypes = new ArrayList<>();
-	static {
-		// Find all new Critter classes
-		HashSet<String> ignore = new HashSet<String>(Arrays.asList(
-				"Controller.java", "Controls.fxml", "Critter.java",
-				"CritterShape.java", "Header.java", "InvalidCritterException.java",
-				"Main.java", "Params.java", "Polygons.java", "View.java"
-		));
-		File folder = new File("./src/assignment4/");
-		File[] listOfFiles = folder.listFiles();
-		for (File file : listOfFiles) {
-			if (!(ignore.contains(file.getName().toString()))) {
-				String toAdd = file.getName();
-				toAdd = toAdd.substring(0, toAdd.length()-5);
-				critterTypes.add(toAdd);
-			}
-		}
-	}
 
 	/*
 	 * Returns a square or a circle, according to shapeIndex
@@ -107,18 +80,15 @@ public class View {
 		List<Critter> population = Critter.TestCritter.getPopulation();
 		StringBuilder allStats = new StringBuilder();
 		allStats.append(Critter.runStats(population));
-//		for (String critterTypes : critterTypes) {
-			Class<?> toUse = Class.forName("assignment4." + statsCritter);
-			System.out.println(toUse);
-			toUse.getClass();
-			List<Critter> thisCritsType = new ArrayList<Critter>();
-			for (Critter crit : population) {
-				if (toUse.isInstance(crit)) {
-					thisCritsType.add(crit);
-				}
+		Class<?> toUse = Class.forName("assignment4." + statsCritter);
+		toUse.getClass();
+		List<Critter> thisCritsType = new ArrayList<Critter>();
+		for (Critter crit : population) {
+			if (toUse.isInstance(crit)) {
+				thisCritsType.add(crit);
 			}
-			allStats.append(toUse.getMethod("runStats", List.class).invoke(null, thisCritsType));
-//		}
+		}
+		allStats.append(toUse.getMethod("runStats", List.class).invoke(null, thisCritsType));
 		Main.statsPane.setScene(new Scene(new Group(new Text("\n\n" + allStats.toString()))));
 	}
 }
