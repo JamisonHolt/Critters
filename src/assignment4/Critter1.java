@@ -1,6 +1,8 @@
 package assignment4;
 
 import assignment4.Critter.TestCritter;
+import javafx.scene.shape.Shape;
+import javafx.scene.paint.Color;
 
 /**
  * Critter1 Critters attempt to bulk up, but are otherwise pretty boring/passive
@@ -14,6 +16,16 @@ public class Critter1 extends TestCritter {
     @Override
     public CritterShape viewShape() {
         return CritterShape.TRIANGLE;
+    }
+
+    @Override
+    public Color viewOutlineColor() {
+        return Color.BEIGE;
+    }
+
+    @Override
+    public Color viewFillColor() {
+        return Color.ROSYBROWN;
     }
 
     @Override

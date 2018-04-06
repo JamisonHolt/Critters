@@ -14,6 +14,7 @@ package assignment4;
 
 
 import java.util.*;
+import javafx.scene.paint.Color;
 
 public abstract class Critter {
 	private static String myPackage;
@@ -51,6 +52,14 @@ public abstract class Critter {
 
 	public CritterShape viewShape() {
 		return CritterShape.SQUARE;
+	}
+
+	public Color viewOutlineColor() {
+		return Color.BLUE;
+	}
+
+	public Color viewFillColor() {
+		return Color.RED;
 	}
 
     /**
@@ -417,30 +426,10 @@ public abstract class Critter {
 	}
 
     /**
-     * Displays the current world using ascii characters
+     * Displays the current world using our View
      */
 	public static void displayWorld() {
 		// Create array to store Critters
-		Critter[][] outputGrid = new Critter[Params.world_height][Params.world_width];
-		for (Critter crit : population) {
-			outputGrid[crit.y_coord][crit.x_coord] = crit;
-		}
-		// Iterate through borders, rows, and cols
-		for (int row=-1; row<=Params.world_height; row++) {
-			for (int col=-1; col<=Params.world_width; col++) {
-				if ((row==-1 || row==Params.world_height) && (col==-1 || col==Params.world_width)) {
-					System.out.print("+");
-				} else if (row==-1 || row==Params.world_height) {
-					System.out.print("-");
-				} else if (col==-1 || col==Params.world_width) {
-					System.out.print("|");
-				} else if (outputGrid[row][col] != null) {
-					System.out.print(outputGrid[row][col].toString());
-				} else {
-					System.out.print(" ");
-				}
-			}
-			System.out.println();
-		}
+        View.paintWorld();
 	}
 }

@@ -58,6 +58,9 @@ public class Main extends Application {
         double numHigh = newHeight / Params.world_height;
         double numWide = newWidth / Params.world_width;
         tileSideLength = numHigh < numWide ? numHigh : numWide;
+
+        // Adjust tile Size to deal with outline sizes causing overflow
+        tileSideLength -= 3;
         stageWidth = tileSideLength * Params.world_width;
         stageHeight = tileSideLength * Params.world_height;
     }

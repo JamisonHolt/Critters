@@ -2,6 +2,9 @@ package assignment4;
 
 import assignment4.Critter.TestCritter;
 
+import javafx.scene.shape.Shape;
+import javafx.scene.paint.Color;
+
 /**
  * Critter with a preferred direction and way of tracking whether it has moved
  * Moves randomly, and will not run from a fight if it has moved
@@ -22,6 +25,16 @@ public class Critter2 extends TestCritter {
     @Override
     public CritterShape viewShape() {
         return CritterShape.DIAMOND;
+    }
+
+    @Override
+    public Color viewOutlineColor() {
+        return Color.BISQUE;
+    }
+
+    @Override
+    public Color viewFillColor() {
+        return Color.SLATEBLUE;
     }
 
     /**
