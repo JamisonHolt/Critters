@@ -22,7 +22,7 @@
       </TextField>
       <TextField fx:id="timeStepTextField" alignment="CENTER" layoutX="14.0" layoutY="55.0" prefHeight="25.0" prefWidth="62.0" promptText="Number" text="1" />
       <TextField fx:id="setSeedTextField" alignment="CENTER" layoutX="14.0" layoutY="96.0" prefHeight="0.0" prefWidth="62.0" promptText="Number" text="1" />
-      <Button fx:id="displayStatsButton" layoutX="15.0" layoutY="179.0" mnemonicParsing="false" onAction="#runDisplayStats" prefHeight="25.0" prefWidth="281.0" text="Display Stats" />
+      <Button fx:id="displayStatsButton" layoutX="187.0" layoutY="187.0" mnemonicParsing="false" onAction="#runDisplayStats" prefHeight="25.0" prefWidth="109.0" text="Display Stats" />
       <Button fx:id="exitSimulationButton" layoutX="16.0" layoutY="349.0" mnemonicParsing="false" onAction="#runExitSimulation" prefHeight="25.0" prefWidth="281.0" text="Exit Simulation" />
       <TextField fx:id="animationTextField" alignment="CENTER" layoutX="16.0" layoutY="263.0" prefHeight="25.0" prefWidth="281.0" promptText="Enter Animation FPS">
          <font>
@@ -30,5 +30,6 @@
          </font>
       </TextField>
       <Button fx:id="stopAnimationButton" layoutX="16.0" layoutY="289.0" mnemonicParsing="false" onAction="#runStopAnimation" prefHeight="25.0" prefWidth="281.0" text="Stop Animation" />
+      <ChoiceBox fx:id="displayStatsChoiceBox" layoutX="16.0" layoutY="187.0" prefHeight="25.0" prefWidth="166.0" />
    </children>
 </Pane>

@@ -1,6 +1,8 @@
 package assignment4;
 
 import javafx.animation.AnimationTimer;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -29,6 +31,9 @@ public class Controller {
     private TextField animationTextField;
 
     @FXML
+    private ChoiceBox displayStatsChoiceBox;
+
+    @FXML
     public void initialize() {
         // Find all new Critter classes
         HashSet<String> ignore = new HashSet<String>(Arrays.asList(
@@ -43,11 +48,22 @@ public class Controller {
                 String toAdd = file.getName();
                 toAdd = toAdd.substring(0, toAdd.length()-5);
                 makeChoiceBox.getItems().addAll(toAdd);
+                if (! toAdd.equals("Algae")) {
+                    displayStatsChoiceBox.getItems().addAll(toAdd);
+                }
             }
+
         }
+        displayStatsChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                View.statsCritter = displayStatsChoiceBox.getItems().get((Integer) number2).toString();
+            }
+        });
 
         run = false;
         makeChoiceBox.setValue(makeChoiceBox.getItems().get(0));
+        displayStatsChoiceBox.setValue(displayStatsChoiceBox.getItems().get(0));
     }
 
     public void runMake() throws InvalidCritterException {

@@ -29,6 +29,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class View {
+	public static String statsCritter;
+
 	static ArrayList<String> critterTypes = new ArrayList<>();
 	static {
 		// Find all new Critter classes
@@ -105,8 +107,8 @@ public class View {
 		List<Critter> population = Critter.TestCritter.getPopulation();
 		StringBuilder allStats = new StringBuilder();
 		allStats.append(Critter.runStats(population));
-		for (String critClassString : critterTypes) {
-			Class<?> toUse = Class.forName("assignment4." + critClassString);
+//		for (String critterTypes : critterTypes) {
+			Class<?> toUse = Class.forName("assignment4." + statsCritter);
 			System.out.println(toUse);
 			toUse.getClass();
 			List<Critter> thisCritsType = new ArrayList<Critter>();
@@ -116,7 +118,7 @@ public class View {
 				}
 			}
 			allStats.append(toUse.getMethod("runStats", List.class).invoke(null, thisCritsType));
-		}
+//		}
 		Main.statsPane.setScene(new Scene(new Group(new Text("\n\n" + allStats.toString()))));
 	}
 }
