@@ -45,16 +45,31 @@ public abstract class Critter {
 
 	public int getY_coord() {return this.y_coord;}
 
+    /**
+     * Finds the shape specified for this critter
+     *
+     * @return the shape of this critter
+     */
 	public CritterShape viewShape() {
-		return CritterShape.SQUARE;
+		return CritterShape.CIRCLE;
 	}
 
+    /**
+     * Finds the outline color specified for this critter
+     *
+     * @return the color of the outline
+     */
 	public Color viewOutlineColor() {
-		return Color.BLUE;
+		return Color.GREEN;
 	}
 
+    /**
+     * Finds the fill color specified for this critter
+     *
+     * @return the color of the fill
+     */
 	public Color viewFillColor() {
-		return Color.RED;
+		return Color.GREEN;
 	}
 
     /**
@@ -246,6 +261,7 @@ public abstract class Critter {
 	 * Prints out how many Critters of each type there are on the board.
 	 *
      * @param critters List of Critters.
+	 * @return  the string of the world's stats
 	 */
 	public static String runStats(List<Critter> critters) {
 	    StringBuilder stats = new StringBuilder();

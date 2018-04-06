@@ -57,7 +57,7 @@ public class Critter2 extends TestCritter {
      * from Jamisons
      *
      * @param enemy The emeny to contemplate fighting
-     * @return
+     * @return whether the critter will fight or not
      */
     @Override
     public boolean fight(String enemy) {
@@ -108,7 +108,8 @@ public class Critter2 extends TestCritter {
     /**
      * Show how many Holts exist, along with how many prefer each direction
      *
-     * @param holts List of holt objects to inspect
+     * @param critter2s List of holt objects to inspect
+     * @return the string of this critters stats
      */
     public static String runStats(java.util.List<Critter> critter2s) {
         // Create array of directions to display percentages of

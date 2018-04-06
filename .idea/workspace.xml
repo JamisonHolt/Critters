@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Jamisons" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7a04217a-aab4-4c51-8d9b-ccffd9888825" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/assignment4/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter$TestCritter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter$TestCritter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Critter2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/View$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/View$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Critters/assignment4/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Critters/assignment4/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment4/Critter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/Critter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment4/Critter1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/Critter1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment4/Critter2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment4/Critter2.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/src/assignment4/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4956">
-              <caret line="236" column="36" lean-forward="true" selection-start-line="236" selection-start-column="36" selection-end-line="236" selection-end-column="36" />
+              <caret line="236" column="36" selection-start-line="236" selection-start-column="36" selection-end-line="236" selection-end-column="36" />
               <folding>
                 <element signature="e#0#6417#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -40,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
+            <state relative-caret-position="1071">
               <caret line="111" column="90" selection-start-line="111" selection-start-column="90" selection-end-line="111" selection-end-column="90" />
               <folding>
                 <element signature="e#0#2645#0" expanded="true" />
@@ -56,8 +71,8 @@
       <file leaf-file-name="Critter1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Critter1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state relative-caret-position="571">
+              <caret line="75" column="48" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
               <folding>
                 <element signature="e#0#2157#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -66,22 +81,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Critter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state relative-caret-position="253">
+              <caret line="266" column="50" lean-forward="true" selection-start-line="266" selection-start-column="50" selection-end-line="266" selection-end-column="50" />
               <folding>
                 <element signature="e#0#15805#0" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#201#210#0" expanded="true" />
                 <element signature="e#369#378#0" expanded="true" />
-                <element signature="e#1226#1227#0" expanded="true" />
-                <element signature="e#1259#1260#0" expanded="true" />
-                <element signature="e#1295#1296#0" expanded="true" />
-                <element signature="e#1319#1320#0" expanded="true" />
-                <element signature="e#1352#1353#0" expanded="true" />
-                <element signature="e#1375#1376#0" expanded="true" />
+                <element signature="e#1378#1379#0" expanded="true" />
+                <element signature="e#1411#1412#0" expanded="true" />
+                <element signature="e#1536#1537#0" expanded="true" />
+                <element signature="e#1560#1561#0" expanded="true" />
+                <element signature="e#1593#1594#0" expanded="true" />
+                <element signature="e#1616#1617#0" expanded="true" />
                 <element signature="e#5289#5290#0" expanded="true" />
                 <element signature="e#5354#5355#0" expanded="true" />
                 <element signature="e#5566#5567#0" expanded="true" />
@@ -97,8 +112,8 @@
       <file leaf-file-name="Critter2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Critter2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state relative-caret-position="190">
+              <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
               <folding>
                 <element signature="e#0#4394#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -142,12 +157,12 @@
       <find>MakeCritter</find>
       <find>MakeCritter(</find>
       <find>runstats</find>
-      <find>look(numSteps, direction</find>
-      <find>* numsteps</find>
+      <find />
+      <find />
       <find>Jamison</find>
       <find>listen</find>
-      <find>look</find>
       <find>displaystats(</find>
+      <find>look</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,16 +191,19 @@
         <option value="$PROJECT_DIR$/src/assignment4/Params.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Controls.fxml" />
         <option value="$PROJECT_DIR$/src/assignment4/Main.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/Critter1.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/Critter.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/Critter2.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Controller.java" />
         <option value="$PROJECT_DIR$/src/assignment4/View.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/Critter1.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/Critter2.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/Critter.java" />
       </list>
     </option>
   </component>
+  <component name="NamedScopeManager">
+    <scope name="Jamisons" pattern="src:Controller||src:Critter||src:Critter1||src:Critter2||src:CritterShape||src:InvalidCritterException||src:Main||src:Polygons||src:View" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="-4" />
+    <option name="y" value="-1084" />
     <option name="width" value="1920" />
     <option name="height" value="1039" />
   </component>
@@ -212,7 +230,6 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,6 +252,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -462,6 +480,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14322917" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -473,7 +492,6 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
@@ -778,58 +796,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#2157#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#4394#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#15805#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#201#210#0" expanded="true" />
-            <element signature="e#369#378#0" expanded="true" />
-            <element signature="e#1226#1227#0" expanded="true" />
-            <element signature="e#1259#1260#0" expanded="true" />
-            <element signature="e#1295#1296#0" expanded="true" />
-            <element signature="e#1319#1320#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-            <element signature="e#1375#1376#0" expanded="true" />
-            <element signature="e#5289#5290#0" expanded="true" />
-            <element signature="e#5354#5355#0" expanded="true" />
-            <element signature="e#5566#5567#0" expanded="true" />
-            <element signature="e#5627#5628#0" expanded="true" />
-            <element signature="e#8600#8609#0" expanded="true" />
-            <element signature="e#11359#11360#0" expanded="true" />
-            <element signature="e#11401#11402#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4956">
-          <caret line="236" column="36" lean-forward="true" selection-start-line="236" selection-start-column="36" selection-end-line="236" selection-end-column="36" />
+          <caret line="236" column="36" selection-start-line="236" selection-start-column="36" selection-end-line="236" selection-end-column="36" />
           <folding>
             <element signature="e#0#6417#0" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -840,11 +810,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
+        <state relative-caret-position="1071">
           <caret line="111" column="90" selection-start-line="111" selection-start-column="90" selection-end-line="111" selection-end-column="90" />
           <folding>
             <element signature="e#0#2645#0" expanded="true" />
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="75" column="48" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#2157#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#4394#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="266" column="50" lean-forward="true" selection-start-line="266" selection-start-column="50" selection-end-line="266" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#15805#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#201#210#0" expanded="true" />
+            <element signature="e#369#378#0" expanded="true" />
+            <element signature="e#1378#1379#0" expanded="true" />
+            <element signature="e#1411#1412#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#1560#1561#0" expanded="true" />
+            <element signature="e#1593#1594#0" expanded="true" />
+            <element signature="e#1616#1617#0" expanded="true" />
+            <element signature="e#5289#5290#0" expanded="true" />
+            <element signature="e#5354#5355#0" expanded="true" />
+            <element signature="e#5566#5567#0" expanded="true" />
+            <element signature="e#5627#5628#0" expanded="true" />
+            <element signature="e#8600#8609#0" expanded="true" />
+            <element signature="e#11359#11360#0" expanded="true" />
+            <element signature="e#11401#11402#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -937,6 +955,7 @@
       </state>
       <state key="ScopeChooserConfigurable.UI">
         <settings>
+          <last-edited>Jamisons</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -944,6 +963,9 @@
               </list>
             </option>
           </splitter-proportions>
+          <order>
+            <scope name="Jamisons" />
+          </order>
         </settings>
       </state>
     </states>

@@ -69,6 +69,12 @@ public class Critter1 extends TestCritter {
         }
     }
 
+    /**
+     * Returns the stats of this critter by finding the one with the highest energy
+     *
+     * @param critter1s the critter1s that exist
+     * @return the string of this critters stats
+     */
     public static String runStats(java.util.List<Critter> critter1s) {
         StringBuilder stats = new StringBuilder();
         stats.append("" + critter1s.size() + " total Critter1s    ");
