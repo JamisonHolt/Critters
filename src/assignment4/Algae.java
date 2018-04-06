@@ -6,6 +6,8 @@ package assignment4;
 import assignment4.Critter.TestCritter;
 
 import java.awt.*;
+import java.util.List;
+
 import javafx.scene.shape.Shape;
 import javafx.scene.paint.Color;
 
@@ -25,6 +27,8 @@ public class Algae extends TestCritter {
 	public Color viewFillColor() {
 		return Color.GREEN;
 	}
+
+    public static String runStats(List<Critter> algaes) {return "";}
 
 	public String toString() { return "@"; }
 

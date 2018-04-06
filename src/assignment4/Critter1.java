@@ -62,9 +62,10 @@ public class Critter1 extends TestCritter {
         }
     }
 
-    public static void runStats(java.util.List<Critter> jamisons) {
-        System.out.print("" + jamisons.size() + " total Jamisons    ");
-        System.out.print("Max Critter1 Energy: " + maxEnergy);
-        System.out.println();
+    public static String runStats(java.util.List<Critter> critter1s) {
+        StringBuilder stats = new StringBuilder();
+        stats.append("" + critter1s.size() + " total Critter1s    ");
+        stats.append("Max Critter1 Energy: " + maxEnergy + "\n");
+        return stats.toString();
     }
 }

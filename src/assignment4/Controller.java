@@ -2,10 +2,11 @@ package assignment4;
 
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.event.ActionEvent;
+import java.io.File;
+import java.util.HashSet;
+import java.util.Arrays;
 
 
 public class Controller {
@@ -29,14 +30,24 @@ public class Controller {
 
     @FXML
     public void initialize() {
+        // Find all new Critter classes
+        HashSet<String> ignore = new HashSet<String>(Arrays.asList(
+                "Controller.java", "Controls.fxml", "Critter.java",
+                "CritterShape.java", "Header.java", "InvalidCritterException.java",
+                "Main.java", "Params.java", "Polygons.java", "View.java"
+        ));
+        File folder = new File("./src/assignment4/");
+        File[] listOfFiles = folder.listFiles();
+        for (File file : listOfFiles) {
+            if (!(ignore.contains(file.getName().toString()))) {
+                String toAdd = file.getName();
+                toAdd = toAdd.substring(0, toAdd.length()-5);
+                makeChoiceBox.getItems().addAll(toAdd);
+            }
+        }
+
         run = false;
-        makeChoiceBox.getItems().addAll(
-                "Algae",
-                "Craig",
-                "Critter1",
-                "Critter2"
-        );
-        makeChoiceBox.setValue("Algae");
+        makeChoiceBox.setValue(makeChoiceBox.getItems().get(0));
     }
 
     public void runMake() throws InvalidCritterException {
@@ -111,8 +122,11 @@ public class Controller {
     public void runDisplayStats() {
         // Make sure animation is not running
         if (run) {return;}
-
-//        Critter.runStats();
+        try {
+            View.paintStats();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return;
     }
 

@@ -7,15 +7,19 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.scene.text.Text;
+import javafx.scene.Group;
 
 import java.awt.*;
 
 public class Main extends Application {
-	static GridPane grid = new GridPane();
+	static public GridPane grid = new GridPane();
+    static public Stage statsPane = new Stage();
+    public Stage controlPane = new Stage();
+
 	public static double stageWidth;
 	public static double stageHeight;
 	public static double tileSideLength;
-	public Stage controlPane = new Stage();
 
     @Override
     public void start(Stage world) {
@@ -41,6 +45,13 @@ public class Main extends Application {
             controlPane.setScene(new Scene(fxml));
             controlPane.setX(stageWidth);
             controlPane.show();
+            double controlPaneHeight = controlPane.getHeight();
+
+            // Show the stats component
+            statsPane.setX(stageWidth);
+            statsPane.setY(controlPaneHeight + 60);
+            statsPane.show();
+
         } catch(Exception e) {
             e.printStackTrace();
         }

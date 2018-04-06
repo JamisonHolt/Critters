@@ -108,30 +108,32 @@ public class Critter2 extends TestCritter {
      *
      * @param holts List of holt objects to inspect
      */
-    public static void runStats(java.util.List<Critter> holts) {
+    public static String runStats(java.util.List<Critter> critter2s) {
         // Create array of directions to display percentages of
         int[] preferred_dirs = {0, 0, 0, 0, 0, 0, 0, 0};
-        for (Critter holt : holts) {
+        for (Critter holt : critter2s) {
             preferred_dirs[((Critter2) holt).preferred_dir] += 1;
         }
 
         // Convert each count to a percentage
-        if (holts.size() > 0) {
+        if (critter2s.size() > 0) {
             for (int i=0; i<8; i++) {
-                preferred_dirs[i] = preferred_dirs[i] * 100 / holts.size();
+                preferred_dirs[i] = preferred_dirs[i] * 100 / critter2s.size();
             }
         }
 
+        StringBuilder stats = new StringBuilder();
         // Print out the stats by iterating through the array of percentages
-        System.out.print("" + holts.size() + " total Holts    ");
-        System.out.print("Preferred Direction percentages: ");
-        if (holts.size() > 0) {
+        stats.append("" + critter2s.size() + " total Critter2s    ");
+        stats.append("Preferred Direction percentages: ");
+        if (critter2s.size() > 0) {
             for (int i=0; i<8; i++) {
-                System.out.print(i + ":" + preferred_dirs[i] + "%,  ");
+                stats.append(i + ":" + preferred_dirs[i] + "%,  ");
             }
         } else {
-            System.out.print("None - all are dead :(");
+            stats.append("None - all are dead :(");
         }
-        System.out.println();
+        stats.append("\n");
+        return stats.toString();
     }
 }

@@ -18,10 +18,35 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.scene.paint.Color;
 import assignmnet4.Polygons.*;
+import javafx.scene.text.Text;
+import javafx.scene.Group;
+import javafx.scene.Scene;
 
+import java.io.File;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.ArrayList;
 
 public class View {
+	static ArrayList<String> critterTypes = new ArrayList<>();
+	static {
+		// Find all new Critter classes
+		HashSet<String> ignore = new HashSet<String>(Arrays.asList(
+				"Controller.java", "Controls.fxml", "Critter.java",
+				"CritterShape.java", "Header.java", "InvalidCritterException.java",
+				"Main.java", "Params.java", "Polygons.java", "View.java"
+		));
+		File folder = new File("./src/assignment4/");
+		File[] listOfFiles = folder.listFiles();
+		for (File file : listOfFiles) {
+			if (!(ignore.contains(file.getName().toString()))) {
+				String toAdd = file.getName();
+				toAdd = toAdd.substring(0, toAdd.length()-5);
+				critterTypes.add(toAdd);
+			}
+		}
+	}
 
 	/*
 	 * Returns a square or a circle, according to shapeIndex
@@ -74,5 +99,24 @@ public class View {
 				}
 			}
 		}
+	}
+
+	public static void paintStats() throws Exception {
+		List<Critter> population = Critter.TestCritter.getPopulation();
+		StringBuilder allStats = new StringBuilder();
+		allStats.append(Critter.runStats(population));
+		for (String critClassString : critterTypes) {
+			Class<?> toUse = Class.forName("assignment4." + critClassString);
+			System.out.println(toUse);
+			toUse.getClass();
+			List<Critter> thisCritsType = new ArrayList<Critter>();
+			for (Critter crit : population) {
+				if (toUse.isInstance(crit)) {
+					thisCritsType.add(crit);
+				}
+			}
+			allStats.append(toUse.getMethod("runStats", List.class).invoke(null, thisCritsType));
+		}
+		Main.statsPane.setScene(new Scene(new Group(new Text("\n\n" + allStats.toString()))));
 	}
 }
