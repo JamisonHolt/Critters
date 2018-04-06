@@ -69,7 +69,7 @@ public abstract class Critter {
      * @param direction representation of the direction to move
      * @return int[] with two coordinates representing y and x coords respectively
      */
-	protected final int[] look(int numSteps, int direction) {
+	protected final int[] getCoord(int numSteps, int direction) {
         // Create a map for making sure directions get updated correctly
         HashMap<String, List<Integer>> dirMap= new HashMap<>();
         dirMap.put("Up", Arrays.asList(1, 2, 3));
@@ -101,6 +101,20 @@ public abstract class Critter {
         return new int[]{new_y_coord, new_x_coord};
     }
 
+    public String look(int direction, boolean steps) {
+	    this.energy -= Params.look_energy_cost;
+	    int numSteps = steps ? 2 : 1;
+	    int[] coord = getCoord(numSteps, direction);
+	    int row = coord[0];
+	    int col = coord[1];
+	    for (Critter crit : population) {
+	        if ((crit.y_coord == row) && (crit.x_coord == col) && (crit.energy > 0)) {
+                return crit.toString();
+            }
+        }
+        return null;
+    }
+
     /**
      * Helper function to allow code sharing between run and walk functions
      * Moves a critter a desired number of steps in a direction, if possible.
@@ -119,7 +133,7 @@ public abstract class Critter {
         this.moved = true;
 
         // Find new coordinate and move critter to location, if not fighting and unoccupied
-        int[] new_coords = look(numSteps, direction);
+        int[] new_coords = getCoord(numSteps, direction);
         if (this.fighting) {
             for (Critter crit : Critter.population) {
                 if (crit.y_coord == new_coords[0] && crit.x_coord == new_coords[1] && crit.energy > 0) {
@@ -171,7 +185,7 @@ public abstract class Critter {
         // Update child's location using adjacent square to parent
         offspring.x_coord = this.x_coord;
         offspring.y_coord = this.y_coord;
-        int[] new_coords = offspring.look(1, direction);
+        int[] new_coords = offspring.getCoord(1, direction);
         offspring.y_coord = new_coords[0];
         offspring.x_coord = new_coords[1];
 

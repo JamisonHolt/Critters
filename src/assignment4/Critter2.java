@@ -59,19 +59,14 @@ public class Critter2 extends TestCritter {
             return true;
         } else if (enemy.equals("2") && !(this.hasMoved)) {
             // Holts are most afraid of their own kind - run and update preferred direction
-            for (int i=0; i<8; i++) {
-                int[] new_coords = this.look(2, this.preferred_dir);
-                int row = new_coords[0];
-                int col = new_coords[1];
-                return false;
+            if (this.look(this.preferred_dir, true) == null) {
+                this.run(this.preferred_dir);
             }
+            return false;
         } else if (enemy.equals("1") && !(this.hasMoved)) {
             // Holts are only a bit afraid of Jamisons - walk
-            int fleeTo = this.preferred_dir;
-            for (int i=0; i<8; i++) {
-                int[] new_coords = this.look(1, fleeTo);
-                int row = new_coords[0];
-                int col = new_coords[1];
+            if (this.look(this.preferred_dir, false) == null) {
+                this.walk(this.preferred_dir);
             }
             return false;
         }
